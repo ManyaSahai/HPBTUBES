@@ -3777,7 +3777,7 @@ ul {
 }
 
 .main-slider-four__title span {
-  color: #a04b8a;
+  color: #0a2ac6;
 }
 
 .main-slider-four__text {
@@ -10194,7 +10194,7 @@ ul {
   position: relative;
   display: block;
   background-color: var(--austry-base);
-  padding: 50px 50px 76px;
+  padding: 50px 50px 299px;
   z-index: 1;
 }
 
@@ -10351,7 +10351,7 @@ ul {
   position: relative;
   display: block;
   padding: 275px 0 167px;
-  margin-top: -185px;
+
   z-index: 1;
 }
 
