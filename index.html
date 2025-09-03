@@ -601,144 +601,340 @@
         <!--About Four End-->
 
         <!--Feature One Start-->
-        <section class="feature-one">
-            <div class="feature-one__shape-1 float-bob-y">
-                <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-            </div>
-            <div class="container">
-                <div class="row">
-                    <!--Feature One Single One Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="feature-one__single-one">
-                            <div class="feature-one__single-one-inner">
-                                <div class="feature-one__single-one-content">
+        <!DOCTYPE html>
+        <html lang="en">
 
-                                    <div class="feature-one__single-one-icon">
-                                        <span class="icon-petroleum"></span>
-                                    </div>
-                                    <h3 class="feature-one__single-one-title"><a href="services-4.html">We offer a wide
-                                            dimensional range:
-                                        </a></h3>
-                                    <div class="feature-one__single-one-text">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Feature Cards</title>
+            <style>
+                .feature-one {
+                    padding: 80px 0;
+                    background: #13223c;
+                    position: relative;
+                }
+
+                .feature-one__shape-1 {
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    z-index: 1;
+                }
+
+                .float-bob-y {
+                    animation: float 3s ease-in-out infinite;
+                }
+
+                @keyframes float {
+
+                    0%,
+                    100% {
+                        transform: translateY(0px);
+                    }
+
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                }
+
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 15px;
+                }
+
+                .row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: -15px;
+                }
+
+                .col-xl-4,
+                .col-lg-6 {
+                    padding: 15px;
+                }
+
+                .col-xl-4 {
+                    flex: 0 0 33.333333%;
+                    max-width: 33.333333%;
+                }
+
+                .col-lg-6 {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+
+                @media (max-width: 991px) {
+
+                    .col-xl-4,
+                    .col-lg-6 {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+                }
+
+                @media (max-width: 767px) {
+
+                    .col-xl-4,
+                    .col-lg-6 {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+                }
+
+                .feature-card {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 30px 25px;
+                    height: 100%;
+                    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                    border: 1px solid #e8ecf0;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .feature-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                }
+
+                .feature-card__icon {
+                    width: 60px;
+                    height: 60px;
+                    background: linear-gradient(135deg, #ff6b35, #f7931e);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                    color: white;
+                    font-size: 24px;
+                }
+
+                .feature-card__title {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    margin-bottom: 15px;
+                    line-height: 1.3;
+                }
+
+                .feature-card__title a {
+                    color: inherit;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+
+                .feature-card__title a:hover {
+                    color: #ff6b35;
+                }
+
+                .feature-card__content {
+                    flex: 1;
+                }
+
+                .feature-card__text {
+                    color: #666;
+                    line-height: 1.6;
+                    margin-bottom: 15px;
+                }
+
+                .feature-card__text ul {
+                    margin: 0;
+                    padding-left: 20px;
+                }
+
+                .feature-card__text li {
+                    margin-bottom: 8px;
+                    color: #666;
+                }
+
+                .feature-card__text li strong {
+                    color: #333;
+                    font-weight: 600;
+                }
+
+                .feature-card__text ul ul {
+                    margin-top: 8px;
+                    padding-left: 20px;
+                }
+
+                .wow {
+                    animation: fadeInUp 1s ease-out;
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                /* Icons using pseudo-elements for demo */
+                .icon-petroleum::before {
+                    content: "⚡";
+                }
+
+                .icon-petrochemical::before {
+                    content: "🔧";
+                }
+
+                .icon-oil-rig::before {
+                    content: "🏭";
+                }
+
+                .icon-standards::before {
+                    content: "📋";
+                }
+
+                .icon-materials::before {
+                    content: "🔩";
+                }
+            </style>
+        </head>
+
+        <body>
+            <section class="feature-one">
+                <div class="feature-one__shape-1 float-bob-y">
+                    <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <!-- Card 1: Dimensional Range -->
+                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="feature-card">
+                                <div class="feature-card__icon">
+                                    <span class="icon-petroleum"></span>
+                                </div>
+                                <h3 class="feature-card__title">
+                                    <a href="services-4.html">Wide Dimensional Range</a>
+                                </h3>
+                                <div class="feature-card__content">
+                                    <div class="feature-card__text">
                                         <ul>
                                             <li>Outer Diameter: 8mm to 1016mm</li>
                                             <li>Wall Thickness: 1mm to 76.2mm</li>
                                             <li>Certifications: MTC, IBR Certified</li>
-                                            <li>Applications:</li>
-                                            <ul>
-                                                <li>Steam and Line Piping</li>
-                                                <li>Boilers and Superheaters</li>
-                                                <li>Economizers and Water Walls</li>
-                                                <li>Headers and Air Pre-heaters</li>
-                                                <li>Heat Exchangers and Rifle Bore Tubes</li>
-                                            </ul>
                                         </ul>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
-                    </div>
-                    <!--Feature One Single One End-->
-                    <!--Feature One Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="feature-one__single">
-                            <div class="feature-one__content">
 
-                                <div class="feature-one__icon">
-                                    <span class="icon-petrochemical"></span>
-                                </div>
-                                <h3 class="feature-one__title"><a href="services-4.html">Manufacturing Methods
-                                    </a></h3>
-                                <p class="feature-one__text">We deliver precision-built products in both seamless and
-                                    welded formats:
-                                </p>
-                                <ul class="feature-one__text">
-                                    <li><strong>Seamless:</strong> Hot Finished (HFS), Cold Drawn (CDS)</li>
-                                    <li><strong>Welded:</strong> ERW, SAW, CDW, SW, MMAW</li>
-                                </ul>
-
-                                <h3 class="feature-one__title"><a href="services-4.html">Material Grades We Offer
-                                    </a></h3>
-                                <p class="feature-one__text">Our steel tubes and pipes are available in various
-                                    chemistries:
-                                </p>
-                                <ul class="feature-one__text">
-                                    <li><strong>Carbon Steel:</strong> Low, medium, and high carbon, with manganese</li>
-                                    <li><strong>Alloy Steel:</strong> Chrome & Moly based grades</li>
-                                    <li><strong>Stainless Steel:</strong> Nickel, chrome, moly compositions</li>
-                                </ul>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--Feature One Single End-->
-                    <!--Feature One Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="feature-one__single">
-                            <div class="feature-one__content">
-
-                                <div class="feature-one__icon">
+                        <!-- Card 2: Applications -->
+                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="150ms">
+                            <div class="feature-card">
+                                <div class="feature-card__icon">
                                     <span class="icon-oil-rig"></span>
                                 </div>
-                                <h3 class="feature-one__title"><a href="services-4.html">Pipes vs Tubes: Functional
-                                        Clarity</a></h3>
-
-                                <ul class="feature-one__text">
-                                    <li><strong>Tubes:</strong> Designed for heat transfer through walls, widely used in
-                                        boilers, heaters, and exchangers</li>
-                                    <li><strong>Pipes:</strong> Used for fluid and steam transfer through bore, in
-                                        pipelines and process systems</li>
-                                </ul>
-
-                                <h3 class="feature-one__title"><a href="services-4.html">Global Standards We Adhere
-                                        To</a></h3>
-                                <p class="feature-one__text">Our products comply with international specifications such
-                                    as:</p>
-                                <ul class="feature-one__text">
-                                    <li><strong>ASME / ASTM:</strong> A178, A179, A192, A210, A213, A312, A335, A106,
-                                        A53, A333</li>
-                                    <li><strong>DIN & EN:</strong> DIN 17175, EN 10216-2, St35.8, 16Mo3, 13CrMo4-5,
-                                        X20CrMoV11-1</li>
-                                    <li><strong>BS & Others:</strong> BS 3059, BS 6323, GB 5310 (20G, 15CrMoG), GOST
-                                        Grades</li>
-                                </ul>
+                                <h3 class="feature-card__title">
+                                    <a href="services-4.html">Key Applications</a>
+                                </h3>
+                                <div class="feature-card__content">
+                                    <div class="feature-card__text">
+                                        <ul>
+                                            <li>Steam and Line Piping</li>
+                                            <li>Boilers and Superheaters</li>
+                                            <li>Economizers and Water Walls</li>
+                                            <li>Headers and Air Pre-heaters</li>
+                                            <li>Heat Exchangers and Rifle Bore Tubes</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
+                        <!-- Card 3: Manufacturing Methods -->
+                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="feature-card">
+                                <div class="feature-card__icon">
+                                    <span class="icon-petrochemical"></span>
+                                </div>
+                                <h3 class="feature-card__title">
+                                    <a href="services-4.html">Manufacturing Methods</a>
+                                </h3>
+                                <div class="feature-card__content">
+                                    <p class="feature-card__text">Precision-built products in both seamless and welded
+                                        formats:</p>
+                                    <div class="feature-card__text">
+                                        <ul>
+                                            <li><strong>Seamless:</strong> Hot Finished (HFS), Cold Drawn (CDS)</li>
+                                            <li><strong>Welded:</strong> ERW, SAW, CDW, SW, MMAW</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Card 4: Material Grades & Pipes vs Tubes -->
+                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="250ms">
+                            <div class="feature-card">
+                                <div class="feature-card__icon">
+                                    <span class="icon-materials"></span>
+                                </div>
+                                <h3 class="feature-card__title">
+                                    <a href="services-4.html">Material Grades & Types</a>
+                                </h3>
+                                <div class="feature-card__content">
+                                    <p class="feature-card__text">Steel tubes and pipes in various chemistries:</p>
+                                    <div class="feature-card__text">
+                                        <ul>
+                                            <li><strong>Carbon Steel:</strong> Low, medium, and high carbon, with
+                                                manganese</li>
+                                            <li><strong>Alloy Steel:</strong> Chrome & Moly based grades</li>
+                                            <li><strong>Stainless Steel:</strong> Nickel, chrome, moly compositions</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-card__text">
+                                        <ul>
+                                            <li><strong>Tubes:</strong> Heat transfer through walls (boilers, heaters,
+                                                exchangers)</li>
+                                            <li><strong>Pipes:</strong> Fluid and steam transfer through bore
+                                                (pipelines, process systems)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Global Standards -->
+                        <div class="col-centered wow fadeInUp" data-wow-delay="300ms">
+                            <div class="feature-card">
+                                <div class="feature-card__icon">
+                                    <span class="icon-standards"></span>
+                                </div>
+                                <h3 class="feature-card__title">
+                                    <a href="services-4.html">Global Standards Compliance</a>
+                                </h3>
+                                <div class="feature-card__content">
+                                    <p class="feature-card__text">Our products comply with international specifications:
+                                    </p>
+                                    <div class="feature-card__text">
+                                        <ul>
+                                            <li><strong>ASME / ASTM:</strong> A178, A179, A192, A210, A213, A312, A335,
+                                                A106, A53, A333</li>
+                                            <li><strong>DIN & EN:</strong> DIN 17175, EN 10216-2, St35.8, 16Mo3,
+                                                13CrMo4-5, X20CrMoV11-1</li>
+                                            <li><strong>BS & Others:</strong> BS 3059, BS 6323, GB 5310 (20G, 15CrMoG),
+                                                GOST Grades</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <style>
-                        .feature-one__single,
-                        .feature-one__single-one {
-                            display: flex;
-                            flex-direction: column;
-                            height: 100%;
-                            /* forces equal height */
-                        }
-
-                        .feature-one__single-one-inner,
-                        .feature-one__content {
-                            flex: 1;
-                            /* content fills remaining space */
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            /* keeps button aligned at bottom */
-                        }
-
-                        .feature-one__single-one-btn-box {
-                            margin-top: auto;
-                            /* button stays at bottom */
-                        }
-                    </style>
-                    <!--Feature One Single End-->
                 </div>
-            </div>
-        </section>
+            </section>
+        </body>
+
+        </html>
         <!--Feature One End-->
         <!--Testimonial Four Start-->
         <!DOCTYPE html>
