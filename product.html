@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HPB Tubes - Products</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+    <meta name="description" content="HPB Tubes Products Page" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+
+    <link rel="stylesheet" href="assets/css/austry.css" />
+    <link rel="stylesheet" href="assets/css/austry-responsive.css" />
+    <link rel="stylesheet" href="assets/css/color-4.css" />
+
+    <style>
+        /* --- Navigation Menu Styles --- */
+        .nav-wrapper-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .nav-menu-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .nav-brochure-btn {
+            background: #007bff;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .nav-brochure-btn:hover {
+            background: #0056b3;
+            color: white;
+        }
+
+        /* --- General & Theme --- */
+        :root {
+            --bg-color-light: #f8faff;
+            --card-bg-color: #ffffff;
+            --primary-blue: #3a7bd5;
+            --primary-purple: #6a1b9a;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --border-color: #e0e7ff;
+            --shadow-color: rgba(99, 102, 241, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h2,
+        h3 {
+            color: var(--primary-purple);
+        }
+
+        /* --- Main Layout --- */
+        .product-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            flex: 0 0 280px;
+            background-color: var(--card-bg-color);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .product-listing {
+            flex-grow: 1;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar h2 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        #searchInput {
+            border: none;
+            padding: 10px 15px;
+            flex-grow: 1;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-box button {
+            background: var(--primary-blue);
+            border: none;
+            padding: 0 12px;
+            cursor: pointer;
+        }
+
+        .search-icon {
+            fill: white;
+            width: 20px;
+            height: 20px;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-list li a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .category-list li a:hover {
+            color: var(--primary-purple);
+            background-color: var(--bg-color-light);
+        }
+
+        .category-list li a.active {
+            color: var(--primary-purple);
+            background-color: var(--bg-color-light);
+            font-weight: 700;
+        }
+
+        /* --- Product Card --- */
+        .results-info {
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .product-card {
+            display: none;
+            background: var(--card-bg-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            animation: fadeIn 0.5s ease;
+            margin-bottom: 30px;
+            /* ADDED: Space between card and pagination */
+        }
+
+        .product-card.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-image {
+            position: relative;
+            width: 100%;
+            padding-top: 60%;
+            background: #f0f4ff;
+        }
+
+        .image-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-slide.active {
+            opacity: 1;
+        }
+
+        .image-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .slide-nav {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .slide-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background: var(--border-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0;
+        }
+
+        .slide-dot.active {
+            background: var(--primary-blue);
+        }
+
+        .product-info {
+            padding: 0 30px 30px 30px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .product-description b {
+            color: var(--text-dark);
+        }
+
+        /* --- Pagination --- */
+        .pagination {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* ADDED: Allow wrapping on small screens */
+            gap: 15px;
+            /* ADDED: Space when items wrap */
+        }
+
+        .page-numbers {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 5px;
+        }
+
+        .page-numbers a {
+            display: block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-blue);
+            background-color: var(--card-bg-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .page-numbers a.active,
+        .page-numbers a:hover {
+            background-color: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 991px) {
+            .product-content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                flex-basis: auto;
+            }
+
+            /* FIX: Hide desktop navigation on tablets and below */
+            .nav-menu-list {
+                display: none;
+            }
+
+            .main-menu-four__main-menu-box .mobile-nav__toggler {
+                display: block;
+                /* Ensure hamburger is visible */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .product-title {
+                font-size: 22px;
+                /* Reduce title size on mobile */
+            }
+
+            .product-info {
+                padding: 0 20px 20px 20px;
+                /* Reduce padding on mobile */
+            }
+
+            .pagination {
+                justify-content: center;
+                /* Center pagination on mobile */
+            }
+
+            /* FIX: Hide brochure button text on small screens */
+            .nav-brochure-btn .btn-text {
+                display: none;
+            }
+
+            .nav-brochure-btn {
+                padding: 8px 10px;
+                /* Adjust padding for icon-only button */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="main-menu main-menu-four">
+            <div class="main-menu-four__wrapper">
+                <div class="container">
+                    <div class="nav-wrapper-inner">
+                        <div class="main-menu-four__left">
+                            <div class="main-menu-four__logo">
+                                <a href="index.html">
+                                    <img src="assets/images/HPB TUBES LLP logo final.png" alt="Logo"
+                                        style="width:150px; height:auto;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="nav-right-section">
+                            <div class="main-menu-four__main-menu-box">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="nav-menu-list">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="#">Products</a></li>
+                                    <li><a href="#">Certifications</a></li>
+                                    <li><a href="#">Quality</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="nav-actions">
+                                <a href="#" class="nav-brochure-btn">
+                                    <i class="fas fa-download"></i> <span class="btn-text">Download Brochure</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="product-content">
+                <aside class="sidebar">
+                    <div class="search-container">
+                        <h2>Search</h2>
+                        <form class="search-box" onsubmit="searchProducts(); return false;">
+                            <input type="text" id="searchInput" placeholder="Search products...">
+                            <button type="submit">
+                                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="categories">
+                        <h2>Categories</h2>
+                        <ul class="category-list">
+                            <li><a href="#" onclick="filterByCategory('all'); return false;">All Products</a></li>
+                            <li><a href="#" onclick="filterByCategory('Water Wall Panels'); return false;">Water Wall
+                                    Panels</a></li>
+                            <li><a href="#" onclick="filterByCategory('Economisers'); return false;">Economisers</a>
+                            </li>
+                            <li><a href="#" onclick="filterByCategory('Superheaters'); return false;">Superheaters</a>
+                            </li>
+                            <li><a href="#" onclick="filterByCategory('Studded Tubes / Coils'); return false;">Studded
+                                    Tubes / Coils</a></li>
+                            <li><a href="#" onclick="filterByCategory('Boiler Bank Tubes'); return false;">Boiler Bank
+                                    Tubes</a></li>
+                            <li><a href="#" onclick="filterByCategory('Tube Bending Systems'); return false;">Tube
+                                    Bending Systems</a>
+                            </li>
+                            <li><a href="#" onclick="filterByCategory('Finned Tubes'); return false;">Finned Tubes</a>
+                            </li>
+                            <li><a href="#" onclick="filterByCategory('Headers'); return false;">Headers</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <div class="product-listing">
+                    <div class="product-card" data-category="Water Wall Panels">
+                        <div class="product-image">
+                            <div class="image-slide active"><img
+                                    src="assets/images/Waterwall Panel-20250723T171803Z-1-001/Waterwall Panel/02_11zon.webp"
+                                    alt="Water Wall Panels 1">
+                            </div>
+                            <div class="image-slide"><img
+                                    src="assets/images/Waterwall Panel-20250723T171803Z-1-001/Waterwall Panel/01_11zon.jpg"
+                                    alt="Water Wall Panels 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Water Wall Panels</h3>
+                            <p class="product-description">Water wall panels are used in modern day boilers in place
+                                of Steam Generating Tubes to reduce heat loss due to their gas tight nature and
+                                reduce insulation costs. We fabricate water wall panels using automatic Fin to Tube
+                                welding machines and large Tube Panel benders to achieve desired shape of panels
+                                which have Swaged Ends, Stub Welded to Headers. We supply Panels with integrated
+                                manhole openings in the panels. We have fabricated panels made of Rifle Bore Tubes
+                                in Lengths of up to 24 mtrs. X max. 28 tubes (2 mtrs. wide)..</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="Economisers">
+                        <div class="product-image">
+                            <div class="image-slide active"><img
+                                    src="assets/images/Economiser_Coils-20250723T171753Z-1-001/Economiser_Coils/01.jpg"
+                                    alt="Economisers 1">
+                            </div>
+                            <div class="image-slide"><img
+                                    src="assets/images/Economiser_Coils-20250723T171753Z-1-001/Economiser_Coils/02.jpg"
+                                    alt="Economisers 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Economisers Coils</h3>
+                            <p class="product-description"><b>These are Boiler feed-water heaters in which the heat
+                                    from waste flue gases is recovered to raise the temperature of feed water
+                                    supplied to the boiler, thereby increasing the Fuel economy, Steaming capacity,
+                                    Life of the boiler and reducing Pollution.
+                                    We have fabricated various types Economizer Coils (Plain Tubular Economizers,
+                                    Finned Economizers, Cast Iron Gilled Economizers), Feed Water Heaters,
+                                    Evaporator Coils etc.
+                                    The main problem faced by Boiler engineers is the Erosion of the Eco-coil tubes
+                                    and mainly at bends. We offer innovative solutions to extend the life of coils
+                                    by providing Cassette baffles for Bends, Half Tube Sleeves for upper tubes, SS
+                                    full sleeved Tubes etc.
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="Superheaters">
+                        <div class="product-image">
+                            <div class="image-slide active"><img
+                                    src="assets/images/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/04.webp"
+                                    alt="Superheaters 1">
+                            </div>
+                            <div class="image-slide"><img
+                                    src="assets/images/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/01.jpg"
+                                    alt="Superheaters 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Superheater Coils</h3>
+                            <p class="product-description">Superheaters are the most critical Boiler Component of
+                                the modern day Thermal Power Plant and are subject to very high metal temperatures.
+                                In fact the capacity of the Superheater to work without failure at higher
+                                Temperatures is what determines the Boilers Capacity and it affects improvement in
+                                economy by reducing corrosion, erosion and steam consumption of the steam turbine.
+                                We have manufactured thousands of Superheaters – Radiant, Pendant, Final, Fluidized
+                                bed type, Reheaters for all kinds of Boilers US, Germany, France, Belgium, Russian,
+                                UK, Swedish, Indian origins of G.E.C., E, B&W, Alstom, Mitsubishi, BHEL, L&T, Wil,
+                                Thermax etc. having complicated very close and compact shapes with tube sizes
+                                ranging from 32 mm OD to 76.2 mm OD and thickness from 3 mm to 12 mm in all types of
+                                Boiler quality steel grades from Carbon, Alloy, Stainless Steels for metal
+                                temperature ranging up-to 656°C and for Boilers of 10 to 500 MW.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="Studded Tubes / Coils">
+                        <div class="product-image">
+                            <div class="image-slide active"><img src="assets/images/product/studded-tubes-coils-01.webp"
+                                    alt="Studded Tubes 1">
+                            </div>
+                            <div class="image-slide"><img src="assets/images/product/superheater_11zon.jpg"
+                                    alt="Studded Tubes 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Studded Tubes for Fluidized Bed Coils</h3>
+                            <p class="product-description">Studded Tubes are used to increase heat Transfer Surface
+                                Area and to slow down Erosion of Boiler Tubes in Fluidized Boiler Furnaces. The
+                                Coils are Bed Evaporator Coils. They are also used in Refineries as Reheater Coils.
+                                There is very high Erosion of the Tubes due to Low quality Fluidized Bed materials
+                                or High Velocity Flue Gas. In order to improve the life of bed coil tube, studding
+                                is done on the most Vulnerable area of bed coil. We can also give Tungsten Carbide
+                                Coating instead of Studs on the Tubes specially Infront of the Nozzles so that a
+                                very High Hardness is achieved to Resist Erosion of the Tubes. We have many clients
+                                who have given Bed Coil Life of over 10 to 15 years for some of our clients.</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="Boiler Bank Tubes">
+                        <div class="product-image">
+                            <div class="image-slide active"><img
+                                    src="assets/images/BoilerBank_Tube-20250723T171753Z-1-001/BoilerBank_Tube/03.jpg"
+                                    alt="Boiler Bank Tubes 1">
+                            </div>
+                            <div class="image-slide"><img
+                                    src="assets/images/BoilerBank_Tube-20250723T171753Z-1-001/BoilerBank_Tube/02_11zon.jpg"
+                                    alt="Boiler Bank Tubes 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Boiler Bank Tubes</h3>
+                            <p class="product-description">Boiler bank tubes or Steam generating tubes is where
+                                water is converted to Steam. Boiler Bank Tubes carry a mixture of water and steam.
+                                Fabricated from Tubes in various sizes and shapes, Bending of these tubes is
+                                generally to larger Radius hence they need some Tube Bending Expertise to avoid
+                                Wrinkles, surface cracking or irregularities, ensuring long life of tubes resulting
+                                in smooth and efficient operation of the boiler. These tubes for replacement in
+                                boilers have long life supplied by us to various industries like Sugar, Refineries,
+                                Steel Plants, Small and large Power Plants. These shaped tubes are generally
+                                fabricated from Seamless/ERW Tubes. The sizes of tubes having different shapes vary
+                                from 114.3 mm OD, X 8 Gauge to 50.8 mm OD. X 5.60 mm Thick with Swaged Ends.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="Tube Bending Systems">
+                        <div class="product-image">
+                            <div class="image-slide active"><img
+                                    src="assets/images/Pipe_Tubes-20250723T171758Z-1-001/Pipe_Tubes/01.jpg"
+                                    alt="Pipes & Tubes 1">
+                            </div>
+                            <div class="image-slide"><img
+                                    src="assets/images/Pipe_Tubes-20250723T171758Z-1-001/Pipe_Tubes/02.jpg"
+                                    alt="Pipes & Tubes 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Tube Bending Systems</h3>
+                            <p class="product-description">Cold Bending: We have adopted the American Mandrel system
+                                of pull/push tube over mandrel - Cold Bending of tubes which ensure much smoother
+                                Profile of Tube Bends with improved Ovality and Thinning thus prolonging their life,
+                                resulting in substantial economic advantage to the customer. We use CNC Automatic
+                                Boiler Tube Bending Machine to ensure Serialized Bending at a high rate of
+                                production of 200 Bends per day.
+                                Tube Size range Min.- 19.05 mm OD x 2 mm thk. Max. 114.3 mm OD x 33 mm thk. Bending
+                                Radius Min. 1.25 x OD to Max. 6.0 x OD.
+                                Hot Bending: We can give Shorter Radius bends up to Min. R = 0.6 x OD. By Hot
+                                Squeezing of the above cold formed Bends in our 300 M.T Hydraulic Press using
+                                Specialized Press dies with Centralizers Keeping Metal Temperature above 860°C.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="Finned Tubes">
+                        <div class="product-image">
+                            <div class="image-slide active"><img src="assets/images/finnedtubes/H Finned 01.webp"
+                                    alt="Finned Tubes 1">
+                            </div>
+                            <div class="image-slide"><img src="assets/images/finnedtubes/H Finned 02_2_11zon.webp"
+                                    alt="Finned Tubes 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Finned Tubes</h3>
+                            <p class="product-description">Essential for gas-liquid heat exchange, we produce
+                                <b>H-Fins</b>, <b>Spiral Welded Fins</b>, and <b>G-Fins</b> for extreme conditions
+                                up to <b>371°C</b>, ensuring optimal thermal performance.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="Headers">
+                        <div class="product-image">
+                            <div class="image-slide active"><img
+                                    src="assets/images/Header-20250723T171757Z-1-001/Header/01.jpg" alt="Headers 1">
+                            </div>
+                            <div class="image-slide"><img
+                                    src="assets/images/Header-20250723T171757Z-1-001/Header/02.jpg" alt="Headers 2">
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <span class="slide-dot active" data-slide="0"></span><span class="slide-dot"
+                                data-slide="1"></span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Headers</h3>
+                            <p class="product-description">Operating under high pressure from <b>300 to 4000
+                                    psi</b>, our boiler <b>Headers</b> are vital for collecting steam. Each unit is
+                                stamped by an <b>ASME Inspector</b> to guarantee adherence to the highest standards.
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const allProducts = document.querySelectorAll('.product-card');
+            const slideIntervals = {};
+
+            // Elements for results display
+            const currentProductNumberEl = document.getElementById('currentProductNumber');
+            const totalProductsEl = document.getElementById('totalProducts');
+            const resultsInfoEl = document.querySelector('.results-info');
+
+            function startSlideShow(card) {
+                const cardId = card.dataset.category + Array.from(allProducts).indexOf(card);
+                if (slideIntervals[cardId]) return;
+                const slides = card.querySelectorAll('.image-slide');
+                if (slides.length <= 1) return;
+                let currentSlide = 0;
+                slideIntervals[cardId] = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    updateSlides(card, currentSlide);
+                }, 3000);
+            }
+
+            function stopSlideShow(card) {
+                const cardId = card.dataset.category + Array.from(allProducts).indexOf(card);
+                if (slideIntervals[cardId]) {
+                    clearInterval(slideIntervals[cardId]);
+                    delete slideIntervals[cardId];
+                }
+            }
+
+            function updateSlides(card, slideIndex) {
+                const slides = card.querySelectorAll('.image-slide');
+                const dots = card.querySelectorAll('.slide-dot');
+                slides.forEach((slide, index) => slide.classList.toggle('active', index === slideIndex));
+                dots.forEach((dot, index) => dot.classList.toggle('active', index === slideIndex));
+            }
+
+            function initializeSlideshows() {
+                allProducts.forEach(card => {
+                    const dots = card.querySelectorAll('.slide-dot');
+                    dots.forEach(dot => {
+                        dot.addEventListener('click', function () {
+                            const slideIndex = parseInt(this.getAttribute('data-slide'));
+                            updateSlides(card, slideIndex);
+                            stopSlideShow(card); // Stop auto-play on manual click
+                        });
+                    });
+                });
+            }
+
+            function updateProductView() {
+                const visibleProducts = Array.from(allProducts).filter(p => p.style.display !== 'none');
+                const totalVisible = visibleProducts.length;
+                const productsPerPage = 1;
+                const totalPages = Math.ceil(totalVisible / productsPerPage);
+
+                allProducts.forEach(stopSlideShow);
+                visibleProducts.forEach(p => p.classList.remove('active'));
+
+                const pageLinksContainer = document.querySelector('.page-numbers');
+                pageLinksContainer.innerHTML = ''; // Clear old page links
+
+                if (totalVisible > 0) {
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#';
+                        a.textContent = i;
+                        a.onclick = (e) => { e.preventDefault(); showPage(i); };
+                        li.appendChild(a);
+                        pageLinksContainer.appendChild(li);
+                    }
+                    showPage(1); // Show the first page of the filtered results
+                } else {
+                    // Update display when no products are found
+                    resultsInfoEl.textContent = 'Showing 0 of 0 Results';
+                }
+            }
+
+            function showPage(pageNumber) {
+                const visibleProducts = Array.from(allProducts).filter(p => p.style.display !== 'none');
+                const totalVisible = visibleProducts.length;
+                const productsPerPage = 1;
+                const totalPages = Math.ceil(totalVisible / productsPerPage);
+
+                if (pageNumber < 1) pageNumber = 1;
+                if (pageNumber > totalPages && totalPages > 0) pageNumber = totalPages;
+
+                const startIndex = (pageNumber - 1) * productsPerPage;
+
+                visibleProducts.forEach((product, index) => {
+                    const isActive = index === startIndex;
+                    product.classList.toggle('active', isActive);
+                    if (isActive) {
+                        // FIX: Immediately show the first slide and then start the slideshow
+                        updateSlides(product, 0);
+                        startSlideShow(product);
+                    } else {
+                        stopSlideShow(product);
+                    }
+                });
+
+                // Update text content of result info
+                if (totalVisible > 0) {
+                    resultsInfoEl.innerHTML = `Showing <span id="currentProductNumber">${startIndex + 1}</span> of <span id="totalProducts">${totalVisible}</span> Results`;
+                }
+
+
+                // Update active state on pagination links
+                document.querySelectorAll('.page-numbers a').forEach((link, index) => {
+                    link.classList.toggle('active', (index + 1) === pageNumber);
+                });
+            }
+
+            window.filterByCategory = (category) => {
+                document.querySelectorAll('.category-list a').forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('onclick').includes(`'${category}'`));
+                });
+
+                allProducts.forEach(product => {
+                    const isVisible = (category === 'all' || product.dataset.category === category);
+                    product.style.display = isVisible ? 'block' : 'none';
+                });
+                updateProductView();
+            };
+
+            window.searchProducts = () => {
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                document.querySelectorAll('.category-list a').forEach(link => link.classList.remove('active')); // remove active class on search
+                allProducts.forEach(product => {
+                    const title = product.querySelector('.product-title').textContent.toLowerCase();
+                    const description = product.querySelector('.product-description').textContent.toLowerCase();
+                    const isVisible = title.includes(searchTerm) || description.includes(searchTerm);
+                    product.style.display = isVisible ? 'block' : 'none';
+                });
+                updateProductView();
+            };
+
+            // Initial Load
+            initializeSlideshows();
+            // Default to the first category, or 'all'
+            filterByCategory('Water Wall Panels');
+        });
+    </script>
+
+    <!--Site Footer Start-->
+    <footer class="site-footer">
+        <div class="site-footer__img">
+            <img src="assets/images/resources/site-footer-img-1.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="site-footer__top">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="footer-widget__column footer-widget__about">
+                            <div class="footer-widget__logo">
+                                <img src="assets/images/HPB TUBES LLP logo final.png" alt="Logo"
+                                    style="width:150px; height:auto;">
+                            </div>
+                            <div class="footer-widget__about-text-box">
+                                <p class="footer-widget__about-text">Looking for a reliable steel tube and pipe
+                                    manufacturer for your next project?
+                                    Partner with HPB Tubes – where precision meets performance.
+                                </p>
+                            </div>
+                            <div class="footer-widget__about-btn-box">
+                                <a href="contact.html" class="footer-widget__about-btn thm-btn">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="footer-widget__column footer-widget__links">
+                            <div class="footer-widget__title-box">
+                                <h4 class="footer-widget__title">Links</h4>
+                            </div>
+                            <ul class="footer-widget__links-list list-unstyled">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="team.html">Meet Our Team</a></li>
+                                <li><a href="news.html">News & Media</a></li>
+                                <li><a href="projects-1.html">Our Projects</a></li>
+                                <li><a href="contact.html">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="footer-widget__contact">
+                            <div class="footer-widget__title-box">
+                                <h4 class="footer-widget__title">Contact</h4>
+                            </div>
+                            <p class="footer-widget__contact-text">30 Road Broklyn Street, 600 <br> New York, USA
+                            </p>
+                            <ul class="footer-widget__Contact-list list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="needhelp%40company.html">needhelp@company.com</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-telephone"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="tel:9288008960">+92 ( 8800 ) - 8960</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="footer-widget__newsletter">
+                            <div class="footer-widget__title-box">
+                                <h4 class="footer-widget__title">Newsletter</h4>
+                            </div>
+                            <div class="footer-widget__newsletter-form-box">
+                                <form class="footer-widget__newsletter-form mc-form" data-url="MC_FORM_URL">
+                                    <div class="footer-widget__newsletter-form-input-box">
+                                        <input type="email" placeholder="Email Address" name="EMAIL">
+                                        <button type="submit" class="footer-widget__newsletter-btn"><img
+                                                src="assets/images/icon/paper-plan-icon.png" alt=""></button>
+                                    </div>
+                                </form>
+                                <div class="mc-form__response"></div>
+                            </div>
+                            <div class="site-footer__social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p class="site-footer__bottom-text">© Copyright 2025 by <a href="#">HPB Tubes</a></p>
+                <ul class="list-unstyled site-footer__bottom-menu">
+                    <li><a href="about.html">Help</a></li>
+                    <li><a href="about.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--Site Footer End-->
+</body>
+
+</html>
