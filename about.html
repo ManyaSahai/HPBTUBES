@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from austry-html.vercel.app/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Aug 2025 08:24:36 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> About us || austry || austry HTML 5 Template </title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="austry HTML 5 Template " />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/austry-icons/style.css">
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/austry.css" />
+    <link rel="stylesheet" href="assets/css/austry-responsive.css" />
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navigation Menu</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+            .nav-wrapper-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .nav-right-section {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                flex: 1;
+                justify-content: flex-end;
+            }
+
+            .nav-menu-list {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 20px;
+            }
+
+            .nav-dropdown {
+                position: relative;
+            }
+
+            .nav-dropdown ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                min-width: 150px;
+                display: none;
+                z-index: 1000;
+            }
+
+            .nav-dropdown:hover ul {
+                display: block;
+            }
+
+            .nav-actions {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-shrink: 0;
+            }
+
+            .nav-brochure-btn {
+                background: #007bff;
+                color: white;
+                padding: 8px 12px;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background 0.3s;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 13px;
+                white-space: nowrap;
+            }
+
+            .nav-brochure-btn:hover {
+                background: #0056b3;
+                color: white;
+                text-decoration: none;
+            }
+
+            .nav-language-selector {
+                position: relative;
+            }
+
+            .nav-language-toggle {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                padding: 6px 8px;
+                background: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 5px;
+                text-decoration: none;
+                color: #333;
+                transition: background 0.3s;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            .nav-language-toggle:hover {
+                background: #e9ecef;
+                text-decoration: none;
+                color: #333;
+            }
+
+            .nav-language-dropdown {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                min-width: 150px;
+                display: none;
+                z-index: 1000;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            .nav-language-selector:hover .nav-language-dropdown {
+                display: block;
+            }
+
+            .nav-language-dropdown a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: #333;
+                transition: background 0.3s;
+            }
+
+            .nav-language-dropdown a:hover {
+                background: #f8f9fa;
+                text-decoration: none;
+            }
+
+            .flag-icon {
+                width: 20px;
+                height: 15px;
+                border-radius: 2px;
+            }
+
+            /* Mobile menu styles */
+            .mobile-nav__toggler {
+                display: none;
+            }
+
+            @media (max-width: 1024px) {
+                .nav-menu-list {
+                    gap: 15px;
+                }
+
+                .nav-brochure-btn {
+                    padding: 6px 10px;
+                    font-size: 12px;
+                }
+
+                .nav-language-toggle {
+                    padding: 5px 6px;
+                    font-size: 11px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .mobile-nav__toggler {
+                    display: block;
+                }
+
+                .nav-menu-list {
+                    display: none;
+                }
+
+                .nav-actions {
+                    flex-direction: row;
+                    gap: 8px;
+                }
+
+                .nav-brochure-btn {
+                    padding: 8px 12px;
+                    font-size: 12px;
+                }
+
+                .nav-language-toggle {
+                    padding: 8px 10px;
+                    font-size: 12px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .nav-wrapper-inner {
+                    flex-wrap: nowrap;
+                }
+
+                .nav-actions {
+                    gap: 5px;
+                }
+
+                .nav-brochure-btn .btn-text {
+                    display: none;
+                }
+
+                .nav-brochure-btn::after {
+                    content: "PDF";
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="main-menu main-menu-four">
+            <div class="main-menu-four__wrapper">
+                <div class="container">
+                    <div class="nav-wrapper-inner">
+                        <div class="main-menu-four__left">
+                            <div class="main-menu-four__logo">
+                                <a href="index.html">
+                                    <img src="assets/images/HPB TUBES LLP logo final.png" alt="Logo"
+                                        style="width:150px; height:auto;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="nav-right-section">
+                            <div class="main-menu-four__main-menu-box">
+                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <ul class="nav-menu-list">
+                                    <li class="nav-dropdown">
+                                        <a href="index.html">Home</a>
+                                        <ul>
+                                            <!-- Home dropdown items if needed -->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">About Us</a>
+                                    </li>
+                                    <li class="nav-dropdown">
+                                        <a href="#">Products</a>
+                                        <ul>
+                                            <!-- Products dropdown items -->
+                                        </ul>
+                                    </li>
+                                    <li class="nav-dropdown">
+                                        <a href="#">Certifications</a>
+                                        <ul>
+                                            <!-- Certifications dropdown items -->
+                                        </ul>
+                                    </li>
+                                    <li class="nav-dropdown">
+                                        <a href="#">Quality</a>
+                                        <ul>
+                                            <!-- Quality dropdown items -->
+                                        </ul>
+                                    </li>
+                                    <li class="nav-dropdown">
+                                        <a href="contact.html">Contact</a>
+                                        <ul>
+                                            <!-- Contact dropdown items -->
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- New Actions Section -->
+                            <div class="nav-actions">
+                                <!-- Download Brochure Button -->
+                                <a href="#" class="nav-brochure-btn" onclick="downloadBrochure()">
+                                    <i class="fas fa-download"></i>
+                                    <a href="assets/images/HPB%20Tubes.pdf" target="_blank">
+                                        <span class="btn-text">Download Brochure</span>
+                                    </a>
+
+                                </a>
+
+                                <!-- Language Selector -->
+                                <div class="nav-language-selector">
+                                    <a href="#" class="nav-language-toggle">
+                                        <i class="fas fa-globe"></i>
+                                        EN
+                                        <i class="fas fa-chevron-down"></i>
+                                    </a>
+                                    <div class="nav-language-dropdown">
+                                        <a href="#" onclick="changeLanguage('en')">
+                                            <span class="flag-icon"
+                                                style="background: linear-gradient(to bottom, #012169 33%, #FFFFFF 33%, #FFFFFF 66%, #C8102E 66%);"></span>
+                                            English
+                                        </a>
+                                        <a href="#" onclick="changeLanguage('fr')">
+                                            <span class="flag-icon"
+                                                style="background: linear-gradient(to right, #002654 33%, #FFFFFF 33%, #FFFFFF 66%, #CE1126 66%);"></span>
+                                            Français
+                                        </a>
+                                        <a href="#" onclick="changeLanguage('ca')">
+                                            <span class="flag-icon"
+                                                style="background: linear-gradient(to bottom, #FF0000 50%, #FFFFFF 50%);"></span>
+                                            Canada
+                                        </a>
+                                        <a href="#" onclick="changeLanguage('pt')">
+                                            <span class="flag-icon"
+                                                style="background: linear-gradient(to right, #009639 50%, #FFDF00 50%);"></span>
+                                            Português
+                                        </a>
+                                        <a href="#" onclick="changeLanguage('es')">
+                                            <span class="flag-icon"
+                                                style="background: linear-gradient(to bottom, #AA151B 33%, #F1BF00 33%, #F1BF00 66%, #AA151B 66%);"></span>
+                                            Español
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            function downloadBrochure() {
+                // Replace with your actual brochure download logic
+                console.log('Downloading brochure...');
+                alert('Brochure download started!');
+                // Example: window.open('path/to/your/brochure.pdf', '_blank');
+            }
+
+            function changeLanguage(lang) {
+                // Replace with your actual language change logic
+                console.log('Changing language to:', lang);
+
+                // Update the display text
+                const langToggle = document.querySelector('.nav-language-toggle');
+                const langCodes = {
+                    'en': 'EN',
+                    'fr': 'FR',
+                    'ca': 'CA',
+                    'pt': 'PT',
+                    'es': 'ES'
+                };
+
+                // Update the displayed language code
+                const langText = langToggle.childNodes[2]; // The text node between icons
+                langText.textContent = ' ' + langCodes[lang] + ' ';
+
+                // Here you would typically:
+                // 1. Store the language preference
+                // 2. Redirect to the appropriate language version
+                // 3. Or dynamically change the page content
+
+                alert(`Language changed to: ${lang}`);
+            }
+        </script>
+    </body>
+
+    </html>
+    </header>
+
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+        </div>
+
+        <div class="container">
+            <div class="page-header__inner">
+                <h2>About us</h2>
+                <div class="thm-breadcrumb__box">
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>About us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Page Header End-->
+
+    <!--About Seven Start-->
+    <section class="about-seven">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="about-seven__left">
+                        <div class="about-seven__img-box">
+                            <div class="about-seven__img">
+                                <img src="assets/images/resources/about-seven-img-1.jpg" alt="">
+                            </div>
+                            <div class="about-seven__img-2">
+                                <img src="assets/images/resources/about-seven-img-2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="about-seven__right">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">Get to Know HPB Tubes</span>
+                            <h2 class="section-title__title">Decades of Excellence in Steel Tubes & Pipes</h2>
+                        </div>
+                        <p class="about-seven__text-1">Our Motto</p>
+                        <p class="about-seven__text-2">To Engineer, Fabricate, Guarantee our Products, Deliver and Erect
+                            them at the right time is what we shall Excel at.
+                            HPB is a Manufacturer & Erector of IBR Approved High Temperature Steam Boiler Pressure
+                            Parts, Boiler Components and Fabricator of Replacement Boiler Tubes, Water Wall Tubes and
+                            Panels, Superheater & Economizer Tubes/Coils and Assemblies, Wall or Steam headers, and
+                            other Boiler Pressure Parts and Heavy Structures for Large Steam Generator are Custom
+                            Fabricated to Precisely Fit your Boiler.
+
+
+                        </p>
+                        <div class="about-seven__points-box">
+                            <ul class="list-unstyled about-seven__points">
+                                <li>
+                                    <div class="icon"><span class="fa fa-check"></span></div>
+                                    <div class="text">
+                                        <p>Suspe ndisse leo</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><span class="fa fa-check"></span></div>
+                                    <div class="text">
+                                        <p>Nescterur cing elit</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><span class="fa fa-check"></span></div>
+                                    <div class="text">
+                                        <p>Entum posuere sit not</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="about-seven__progress">
+                                <div class="about-seven__progress-wrap">
+                                    <div class="about-seven__progress-single">
+                                        <div class="about-seven__progress-box">
+                                            <div class="circle-progress"
+                                                data-options='{ "value": 0.9,"thickness": 3,"emptyFill": "#eff1f5","lineCap": "square", "size": 118, "fill": { "color": "#fc811b" } }'>
+                                            </div><!-- /.circle-progress -->
+                                            <span>90%</span>
+                                        </div>
+                                        <div class="about-seven__progress-content">
+                                            <h3>Building <br> Construction</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-seven__btn-box">
+                            <a href="about.html" class="thm-btn about-seven__btn">discover More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Seven End-->
+
+
+
+    <!--Testimonial Four Start-->
+    <section class="testimonial-four">
+        <div class="testimonial-four__big-img">
+            <img src="assets/images/resources/testimonial-four-big-img.png" alt="">
+            <div class="testimonial-four__experience">
+                <h3 class="testimonial-four__experience-year">18</h3>
+                <p class="testimonial-four__experience-text">Years of <br> experience</p>
+            </div>
+        </div>
+        <div class="testimonial-four__wrap">
+            <div class="testimonial-four__bg-one float-bob-x"
+                style="background-image: url(assets/images/backgrounds/testimonial-four-bg-1.jpg);"></div>
+            <div class="testimonial-four__shape-1 float-bob-y">
+                <img src="assets/images/shapes/testimonial-four-shape-1.png" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="testimonial-four__left">
+                            <div class="section-title text-left">
+                                <span class="section-title__tagline">Austry Feedbacks</span>
+                                <h2 class="section-title__title">What they’re saying?</h2>
+                            </div>
+                            <div class="testimonial-four__slider">
+
+                                <div class="swiper-container" id="testimonial-four__thumb">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-four__img-holder">
+                                                <img src="assets/images/testimonial/testimonial-4-1.jpg" alt="">
+                                            </div>
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-four__img-holder">
+                                                <img src="assets/images/testimonial/testimonial-4-2.jpg" alt="">
+                                            </div>
+                                        </div><!-- /.swiper-slide -->
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-four__img-holder">
+                                                <img src="assets/images/testimonial/testimonial-4-3.jpg" alt="">
+                                            </div>
+                                        </div><!-- /.swiper-slide -->
+                                    </div><!-- /.swiper-wrapper -->
+                                </div><!-- /#testimonials-one__thumb.swiper-container -->
+
+                                <div class="testimonial-one__main-content">
+                                    <div class="swiper-container" id="testimonial-four__carousel">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="testimonial-four__client-info">
+                                                    <div class="testimonial-four__client-img">
+                                                        <img src="assets/images/testimonial/testimonial-four-client-img-1-1.jpg"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="testimonial-four__client-content">
+                                                        <p class="testimonial-four__client-text">Lorem ipsum dolor
+                                                            sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                            ligula eget dolor. Cum sociis natoque penatibus et
+                                                            magnis dis montes.</p>
+                                                        <div class="testimonial-four__client-details">
+                                                            <div class="testimonial-four__client-title-box">
+                                                                <div class="testimonial-four__client-rating">
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                                <h4 class="testimonial-four__client-name">Mike
+                                                                    hardson
+                                                                </h4>
+                                                                <p class="testimonial-four__client-sub-title">
+                                                                    Marketing
+                                                                    head</p>
+                                                            </div>
+                                                            <div class="testimonial-four__quote">
+                                                                <span class="icon-quote"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.swiper-slide -->
+
+                                            <div class="swiper-slide">
+                                                <div class="testimonial-four__client-info">
+                                                    <div class="testimonial-four__client-img">
+                                                        <img src="assets/images/testimonial/testimonial-four-client-img-1-2.jpg"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="testimonial-four__client-content">
+                                                        <p class="testimonial-four__client-text">Lorem ipsum dolor
+                                                            sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                            ligula eget dolor. Cum sociis natoque penatibus et
+                                                            magnis dis montes.</p>
+                                                        <div class="testimonial-four__client-details">
+                                                            <div class="testimonial-four__client-title-box">
+                                                                <div class="testimonial-four__client-rating">
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                                <h4 class="testimonial-four__client-name">Aleesha
+                                                                    brown
+                                                                </h4>
+                                                                <p class="testimonial-four__client-sub-title">
+                                                                    Marketing
+                                                                    head</p>
+                                                            </div>
+                                                            <div class="testimonial-four__quote">
+                                                                <span class="icon-quote"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.swiper-slide -->
+
+                                            <div class="swiper-slide">
+                                                <div class="testimonial-four__client-info">
+                                                    <div class="testimonial-four__client-img">
+                                                        <img src="assets/images/testimonial/testimonial-four-client-img-1-1.jpg"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="testimonial-four__client-content">
+                                                        <p class="testimonial-four__client-text">Lorem ipsum dolor
+                                                            sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                            ligula eget dolor. Cum sociis natoque penatibus et
+                                                            magnis dis montes.</p>
+                                                        <div class="testimonial-four__client-details">
+                                                            <div class="testimonial-four__client-title-box">
+                                                                <div class="testimonial-four__client-rating">
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                                <h4 class="testimonial-four__client-name">Kevin
+                                                                    coper
+                                                                </h4>
+                                                                <p class="testimonial-four__client-sub-title">
+                                                                    Marketing
+                                                                    head</p>
+                                                            </div>
+                                                            <div class="testimonial-four__quote">
+                                                                <span class="icon-quote"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.swiper-slide -->
+
+                                        </div><!-- /.swiper-wrapper -->
+                                    </div>
+                                    <div class="testimonial-four__nav">
+                                        <div class="swiper-button-prev" id="testimonial-four__swiper-button-next">
+                                            <i class="icon-left-arrow"></i>
+                                        </div>
+                                        <div class="swiper-button-next" id="testimonial-four__swiper-button-prev">
+                                            <i class="icon-right-arrow"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Testimonial Four End-->
+
+
+
+    <!--FAQ One Start-->
+    <section class="faq-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="faq-one__left">
+                        <div class="section-title text-left">
+                            <span class="section-title__tagline">Frequently Asked Questions</span>
+                            <h2 class="section-title__title">Things you would like to know about</h2>
+                        </div>
+                        <div class="faq-one__icon-box">
+                            <div class="faq-one__icon">
+                                <span class="icon-right-arrow"></span>
+                            </div>
+                            <div class="faq-one__icon-text">
+                                <p>Donec quis felis commodo orem ipsum is simply free text dolor sit amet.</p>
+                            </div>
+                        </div>
+                        <p class="faq-one__text">Sed rhoncus facilisis purus, at accumsan purus sagittis vitae.
+                            Nullam acelit at eros imperdiet pulvinar velut nisl. Pellentesque sit placerat neque
+                            amet sapien semper tempus.</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="faq-one__right">
+                        <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                            <div class="accrodion active">
+                                <div class="accrodion-title">
+                                    <h4>What material are used for house building?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Sed rhoncus facilisis purus, at accumsan purus sagittis vitae. Nullam
+                                            acelit at eros imperdiet pulvinar velut nisl. Pellentesque sit placerat
+                                            neque amet sapien semper tempus.</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>What are the easiest way to get qoute?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Sed rhoncus facilisis purus, at accumsan purus sagittis vitae. Nullam
+                                            acelit at eros imperdiet pulvinar velut nisl. Pellentesque sit placerat
+                                            neque amet sapien semper tempus.</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>How much time will I save on a renovation?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Sed rhoncus facilisis purus, at accumsan purus sagittis vitae. Nullam
+                                            acelit at eros imperdiet pulvinar velut nisl. Pellentesque sit placerat
+                                            neque amet sapien semper tempus.</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FAQ One End-->
+
+    <!--CTA One Start-->
+    <section class="cta-one">
+        <div class="cta-one__shape-1 float-bob-y">
+            <img src="assets/images/shapes/cta-one-shape-1.png" alt="">
+        </div>
+        <div class="cta-one__shape-2 float-bob-x">
+            <img src="assets/images/shapes/cta-one-shape-2.png" alt="">
+        </div>
+        <div class="container">
+            <div class="cta-one__inner">
+                <h3 class="cta-one__title">Quality, affordable, manufacturing <br> and industrial services</h3>
+                <a href="about.html" class="thm-btn cta-one__btn">Discover more</a>
+            </div>
+        </div>
+    </section>
+    <!--CTA One End-->
+
+    <!--Site Footer Start-->
+    <footer class="site-footer">
+        <div class="site-footer__img">
+            <img src="assets/images/resources/site-footer-img-1.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="site-footer__top">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="footer-widget__column footer-widget__about">
+                            <div class="footer-widget__logo">
+                                <img src="assets/images/HPB TUBES LLP logo final.png" alt="Logo"
+                                    style="width:150px; height:auto;">
+                            </div>
+                            <div class="footer-widget__about-text-box">
+                                <p class="footer-widget__about-text">Looking for a reliable steel tube and pipe
+                                    manufacturer for your next project?
+                                    Partner with HPB Tubes – where precision meets performance.
+                                </p>
+                            </div>
+                            <div class="footer-widget__about-btn-box">
+                                <a href="contact.html" class="footer-widget__about-btn thm-btn">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="footer-widget__column footer-widget__links">
+                            <div class="footer-widget__title-box">
+                                <h4 class="footer-widget__title">Links</h4>
+                            </div>
+                            <ul class="footer-widget__links-list list-unstyled">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="team.html">Meet Our Team</a></li>
+                                <li><a href="news.html">News & Media</a></li>
+                                <li><a href="projects-1.html">Our Projects</a></li>
+                                <li><a href="contact.html">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="footer-widget__contact">
+                            <div class="footer-widget__title-box">
+                                <h4 class="footer-widget__title">Contact</h4>
+                            </div>
+                            <p class="footer-widget__contact-text">Office: 90, Ashok Chamber, 5th Floor, Bharuch Street,
+                                <br>Dana Bunder, Mumbai - 400009.
+                            </p>
+                            <ul class="footer-widget__Contact-list list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="needhelp%40company.html">hpbtubes@gmail.com</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-telephone"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="tel:9288008960">+91 88509 88237</a></p>
+                                        <p><a href="tel:9288008960">+91 22 23489993</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="footer-widget__newsletter">
+                            <div class="footer-widget__title-box">
+                                <h4 class="footer-widget__title">Newsletter</h4>
+                            </div>
+                            <div class="footer-widget__newsletter-form-box">
+                                <form class="footer-widget__newsletter-form mc-form" data-url="MC_FORM_URL">
+                                    <div class="footer-widget__newsletter-form-input-box">
+                                        <input type="email" placeholder="Email Address" name="EMAIL">
+                                        <button type="submit" class="footer-widget__newsletter-btn"><img
+                                                src="assets/images/icon/paper-plan-icon.png" alt=""></button>
+                                    </div>
+                                </form>
+                                <div class="mc-form__response"></div>
+                            </div>
+                            <div class="site-footer__social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p class="site-footer__bottom-text">© Copyright 2025 by <a href="#">HPB Tubes</a></p>
+                <ul class="list-unstyled site-footer__bottom-menu">
+                    <li><a href="about.html">Help</a></li>
+                    <li><a href="about.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--Site Footer End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-1.png" width="130"
+                        alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@austry.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/vegas/vegas.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/timepicker/timePicker.js"></script>
+    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
+    <script src="assets/vendors/sidebar-content/jquery-sidebar-content.js"></script>
+
+
+
+
+    <!-- template js -->
+    <script src="assets/js/austry.js"></script>
+</body>
+
+
+<!-- Mirrored from austry-html.vercel.app/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Aug 2025 08:24:41 GMT -->
+
+</html>
