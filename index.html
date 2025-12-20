@@ -545,42 +545,198 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6">
-                        <div class="about-four__right">
-                            <div class="section-title text-left">
-                                <span class="section-title__tagline">Our Motto</span>
-                                <h2 class="section-title__title">To Engineer, Fabricate, Guarantee our Products, Deliver
+                    <div class="col-xl-6 about-shifted">
+                        <div class="about-custom-right">
+                            <div class="section-title section-title-custom text-left">
+                                <span class="section-title-custom__tagline">Our Motto</span>
+
+                                <h2 class="section-title-custom__title">
+                                    To Engineer, Fabricate, Guarantee our Products, Deliver
                                     and Erect them at the right time is what we shall Excel at.
                                 </h2>
                             </div>
-                            <p class="about-four__text">HPB is a trusted manufacturer and erector of IBR-approved boiler
-                                pressure parts, delivering custom-fabricated tubes, coils, headers, and heavy structures
-                                engineered to fit any steam generator. With 50+ years of combined expertise, we
-                                specialize in precision fabrication, bending, and welding of carbon, alloy, and
+
+                            <p class="about-custom__text">
+                                HPB is a trusted manufacturer and erector of IBR-approved boiler
+                                pressure parts, delivering custom-fabricated tubes, coils, headers,
+                                and heavy structures engineered to fit any steam generator. With
+                                50+ years of combined expertise, we specialize in precision
+                                fabrication, bending, and welding of carbon, alloy, and
                                 stainless-steel components.
                             </p>
 
-                            <div class="about-four__bottom">
-                                <div class="about-four__bottom-left">
-                                    <div class="about-four__bottom-text-box">
-                                        <p class="about-four__bottom-text">We provide innovative product solutions for
-                                            all sustainable progress partners.</p>
+                            <div class="about-custom__bottom">
+                                <div class="about-custom__bottom-left">
+                                    <div class="about-custom__bottom-text-box">
+                                        <p class="about-custom__bottom-text">
+                                            We provide innovative product solutions for
+                                            all sustainable progress partners.
+                                        </p>
                                     </div>
-
                                 </div>
-                                <div class="about-four__bottom-right">
-                                    <div class="about-four__project-completed">
-                                        <div class="about-four__project-completed-icon">
+
+                                <div class="about-custom__bottom-right">
+                                    <div class="about-custom__project-completed">
+                                        <div class="about-custom__project-icon">
                                             <span class="icon-refinery"></span>
                                         </div>
-
                                     </div>
                                 </div>
+
+
+                                <style>
+                                    /* ---------- Better spacing between sections ---------- */
+                                    .section-title-custom__tagline {
+                                        margin-bottom: 180px;
+                                        /* increased from 10px */
+                                    }
+
+                                    /* more space after paragraph */
+                                    .about-custom__text {
+                                        margin-bottom: 55px;
+                                        /* increased from 45px */
+                                    }
+
+                                    /* paragraph spacing */
+                                    .about-custom__text {
+                                        margin-top: 55px;
+                                        margin-bottom: 45px;
+                                        line-height: 1.7;
+
+                                    }
+
+                                    /* last section spacing */
+                                    .about-custom__bottom {
+                                        margin-top: 40px;
+                                    }
+
+                                    /* ---------- Align last line text + icon like image ---------- */
+
+                                    .about-custom__bottom {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        gap: 50px;
+                                    }
+
+                                    /* keep text on left */
+                                    .about-custom__bottom-left {
+                                        max-width: 65%;
+                                    }
+
+                                    /* icon container on right */
+                                    .about-custom__bottom-right {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: flex-end;
+                                    }
+
+                                    /* icon box styling (subtle card feel like image) */
+                                    .about-custom__project-completed {
+                                        background-color: #f7f8fa;
+                                        padding: 22px;
+                                        border-radius: 6px;
+                                    }
+
+                                    /* icon itself */
+                                    .about-custom__project-icon span {
+                                        position: relative;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 70px;
+                                        color: #ff3b3b;
+                                        /* red like screenshot */
+                                    }
+
+                                    .section-title-custom__tagline {
+                                        position: relative;
+                                        display: inline-block;
+                                        font-weight: 600;
+                                        color: #2c3e50;
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .section-title-custom__tagline::after {
+                                        content: "";
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: -6px;
+                                        width: 32px;
+                                        height: 3px;
+                                        background-color: #ff3b3b;
+                                        /* red accent like image */
+                                        border-radius: 2px;
+                                    }
+
+                                    .section-title-custom__title {
+                                        position: relative;
+                                        color: #2c3e50;
+                                        margin-bottom: 35px;
+                                    }
+
+                                    .section-title-custom__title::after {
+                                        content: "";
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: -18px;
+                                        width: 45px;
+                                        height: 4px;
+                                        background-color: #1e88e5;
+                                        /* blue accent */
+                                        border-radius: 2px;
+                                    }
+
+                                    /* shift entire section slightly down */
+                                    .about-shifted {
+                                        margin-top: 30px;
+                                    }
+
+                                    /* main container */
+                                    .about-custom-right {
+                                        color: #2c3e50;
+                                    }
+
+                                    /* section title */
+                                    .section-title-custom__tagline {
+                                        color: #2c3e50;
+                                        font-weight: 600;
+                                        letter-spacing: 0.5px;
+                                    }
+
+                                    .section-title-custom__title {
+                                        color: #000000;
+                                    }
+
+                                    /* paragraph text */
+                                    .about-custom__text {
+                                        color: #2c3e50;
+                                        margin-top: 15px;
+                                    }
+
+                                    /* bottom section spacing */
+                                    .about-custom__bottom {
+                                        margin-top: 25px;
+                                    }
+
+                                    /* bottom text */
+                                    .about-custom__bottom-text {
+                                        color: #000000;
+                                    }
+
+                                    /* icon styling */
+                                    .about-custom__project-icon span {
+                                        position: relative;
+                                        display: flex;
+                                        align-items: center;
+                                        font-size: 70px;
+                                        color: #2c3e50;
+                                    }
+                                </style>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         <!--About Four End-->
 
@@ -591,26 +747,62 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Feature Cards</title>
+            <title>Modern Feature Cards</title>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
             <style>
-                .feature-one {
-                    padding: 80px 0;
-                    background: #13223c;
+                :root {
+                    --theme-dark-bg: #13223c;
+                    --theme-card-bg: #1a2c4e;
+                    /* Slightly lighter than main bg */
+                    --theme-primary-blue: #0d6efd;
+                    --theme-text-light: #e6e9ec;
+                    --theme-text-muted: #aab4c0;
+                }
+
+                body {
+                    font-family: 'Inter', sans-serif;
+                    background-color: var(--theme-dark-bg);
+                    color: var(--theme-text-light);
+                    margin: 0;
+                }
+
+                .feature-section {
+                    padding: 100px 0;
+                    /* Subtle radial gradient to give depth to the dark background */
+                    background: radial-gradient(circle at top center, #1b335a 0%, var(--theme-dark-bg) 70%);
                     position: relative;
+                    overflow: hidden;
                 }
 
-                .feature-one__shape-1 {
+                /* Animated Background Shapes */
+                .bg-shape {
                     position: absolute;
-                    top: 20px;
-                    left: 20px;
-                    z-index: 1;
+                    border-radius: 50%;
+                    filter: blur(80px);
+                    opacity: 0.15;
+                    z-index: 0;
                 }
 
-                .float-bob-y {
-                    animation: float 3s ease-in-out infinite;
+                .shape-1 {
+                    top: -10%;
+                    left: -5%;
+                    width: 400px;
+                    height: 400px;
+                    background: var(--theme-primary-blue);
+                    animation: float-bob-y 8s ease-in-out infinite;
                 }
 
-                @keyframes float {
+                .shape-2 {
+                    bottom: -10%;
+                    right: -5%;
+                    width: 300px;
+                    height: 300px;
+                    background: #4facfe;
+                    animation: float-bob-y 10s ease-in-out infinite reverse;
+                }
+
+                @keyframes float-bob-y {
 
                     0%,
                     100% {
@@ -618,90 +810,123 @@
                     }
 
                     50% {
-                        transform: translateY(-10px);
+                        transform: translateY(-30px);
                     }
                 }
 
                 .container {
                     max-width: 1200px;
                     margin: 0 auto;
-                    padding: 0 15px;
+                    padding: 0 20px;
+                    position: relative;
+                    z-index: 2;
                 }
 
+                /* Grid System */
                 .row {
                     display: flex;
                     flex-wrap: wrap;
                     margin: -15px;
+                    justify-content: center;
+                    /* Centers the last row */
                 }
 
-                .col-xl-4,
-                .col-lg-6 {
+                .col-lg-4,
+                .col-md-6 {
                     padding: 15px;
+                    flex: 0 0 100%;
+                    max-width: 100%;
                 }
 
-                .col-xl-4 {
-                    flex: 0 0 33.333333%;
-                    max-width: 33.333333%;
-                }
-
-                .col-lg-6 {
-                    flex: 0 0 50%;
-                    max-width: 50%;
-                }
-
-                @media (max-width: 991px) {
-
-                    .col-xl-4,
-                    .col-lg-6 {
+                @media (min-width: 768px) {
+                    .col-md-6 {
                         flex: 0 0 50%;
                         max-width: 50%;
                     }
                 }
 
-                @media (max-width: 767px) {
-
-                    .col-xl-4,
-                    .col-lg-6 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
+                @media (min-width: 992px) {
+                    .col-lg-4 {
+                        flex: 0 0 33.333%;
+                        max-width: 33.333%;
                     }
                 }
 
+
+                /* Card Styling */
                 .feature-card {
-                    background: white;
-                    border-radius: 12px;
-                    padding: 30px 25px;
+                    background: var(--theme-card-bg);
+                    border-radius: 16px;
+                    padding: 40px 30px;
                     height: 100%;
-                    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-                    transition: all 0.3s ease;
-                    border: 1px solid #e8ecf0;
                     display: flex;
                     flex-direction: column;
+                    /* Subtle border that glows on hover */
+                    border: 1px solid rgba(13, 110, 253, 0.1);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    /* Bouncy transition */
+                    opacity: 0;
+                    /* Hidden initially for animation */
+                    animation: fadeInUp 0.8s ease-out forwards;
                 }
 
+                /* Staggered Animation Delays */
+                .card-1 {
+                    animation-delay: 0.1s;
+                }
+
+                .card-2 {
+                    animation-delay: 0.2s;
+                }
+
+                .card-3 {
+                    animation-delay: 0.3s;
+                }
+
+                .card-4 {
+                    animation-delay: 0.4s;
+                }
+
+                .card-5 {
+                    animation-delay: 0.5s;
+                }
+
+
                 .feature-card:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+                    transform: translateY(-10px);
+                    border-color: var(--theme-primary-blue);
+                    /* The bright blue glow effect */
+                    box-shadow: 0 15px 40px rgba(13, 110, 253, 0.25);
                 }
 
                 .feature-card__icon {
-                    width: 60px;
-                    height: 60px;
-                    background: linear-gradient(135deg, #ff6b35, #f7931e);
-                    border-radius: 12px;
+                    width: 70px;
+                    height: 70px;
+                    /* Subtle glowing background for the icon */
+                    background: rgba(13, 110, 253, 0.1);
+                    border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: 20px;
-                    color: white;
-                    font-size: 24px;
+                    margin-bottom: 25px;
+                    color: var(--theme-primary-blue);
+                    font-size: 32px;
+                    transition: transform 0.3s ease;
                 }
 
+                .feature-card:hover .feature-card__icon {
+                    transform: scale(1.1) rotate(5deg);
+                    background: var(--theme-primary-blue);
+                    color: white;
+                }
+
+
                 .feature-card__title {
-                    font-size: 20px;
+                    font-size: 22px;
                     font-weight: 700;
-                    color: #1a1a1a;
-                    margin-bottom: 15px;
+                    color: var(--theme-text-light);
+                    margin-bottom: 20px;
                     line-height: 1.3;
                 }
 
@@ -709,50 +934,62 @@
                     color: inherit;
                     text-decoration: none;
                     transition: color 0.3s ease;
+                    background: linear-gradient(to right, var(--theme-primary-blue), var(--theme-primary-blue));
+                    background-size: 0% 2px;
+                    background-repeat: no-repeat;
+                    background-position: bottom left;
                 }
 
                 .feature-card__title a:hover {
-                    color: #ff6b35;
+                    color: var(--theme-primary-blue);
+                    background-size: 100% 2px;
                 }
 
                 .feature-card__content {
                     flex: 1;
+                    color: var(--theme-text-muted);
+                    font-size: 15px;
+                    line-height: 1.7;
                 }
 
-                .feature-card__text {
-                    color: #666;
-                    line-height: 1.6;
-                    margin-bottom: 15px;
-                }
-
+                /* Custom List Styling */
                 .feature-card__text ul {
                     margin: 0;
-                    padding-left: 20px;
+                    padding-left: 0;
+                    list-style: none;
                 }
 
                 .feature-card__text li {
-                    margin-bottom: 8px;
-                    color: #666;
+                    margin-bottom: 12px;
+                    position: relative;
+                    padding-left: 24px;
+                }
+
+                /* Using a sleek arrow instead of standard bullets */
+                .feature-card__text li::before {
+                    content: "➤";
+                    position: absolute;
+                    left: 0;
+                    top: 2px;
+                    color: var(--theme-primary-blue);
+                    font-size: 12px;
                 }
 
                 .feature-card__text li strong {
-                    color: #333;
+                    color: var(--theme-text-light);
                     font-weight: 600;
                 }
 
                 .feature-card__text ul ul {
-                    margin-top: 8px;
-                    padding-left: 20px;
-                }
-
-                .wow {
-                    animation: fadeInUp 1s ease-out;
+                    margin-top: 10px;
+                    padding-left: 15px;
+                    border-left: 2px solid rgba(13, 110, 253, 0.2);
                 }
 
                 @keyframes fadeInUp {
                     from {
                         opacity: 0;
-                        transform: translateY(30px);
+                        transform: translateY(40px);
                     }
 
                     to {
@@ -761,39 +998,38 @@
                     }
                 }
 
-                /* Icons using pseudo-elements for demo */
+                /* Icons - Replaced emojis with slightly cleaner unicode for better styling */
                 .icon-petroleum::before {
                     content: "⚡";
                 }
 
                 .icon-petrochemical::before {
-                    content: "🔧";
+                    content: "⚙️";
                 }
 
                 .icon-oil-rig::before {
-                    content: "🏭";
+                    content: "🏗️";
                 }
 
                 .icon-standards::before {
-                    content: "📋";
+                    content: "📜";
                 }
 
                 .icon-materials::before {
-                    content: "🔩";
+                    content: "⛓️";
                 }
             </style>
         </head>
 
         <body>
-            <section class="feature-one">
-                <div class="feature-one__shape-1 float-bob-y">
-                    <img src="assets/images/shapes/feature-one-shape-1.png" alt="">
-                </div>
+            <section class="feature-section">
+                <div class="bg-shape shape-1"></div>
+                <div class="bg-shape shape-2"></div>
+
                 <div class="container">
                     <div class="row">
-                        <!-- Card 1: Dimensional Range -->
-                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
-                            <div class="feature-card">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card card-1">
                                 <div class="feature-card__icon">
                                     <span class="icon-petroleum"></span>
                                 </div>
@@ -812,9 +1048,8 @@
                             </div>
                         </div>
 
-                        <!-- Card 2: Applications -->
-                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="150ms">
-                            <div class="feature-card">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card card-2">
                                 <div class="feature-card__icon">
                                     <span class="icon-oil-rig"></span>
                                 </div>
@@ -835,9 +1070,8 @@
                             </div>
                         </div>
 
-                        <!-- Card 3: Manufacturing Methods -->
-                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="feature-card">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card card-3">
                                 <div class="feature-card__icon">
                                     <span class="icon-petrochemical"></span>
                                 </div>
@@ -856,10 +1090,10 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Card 4: Material Grades & Pipes vs Tubes -->
-                        <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="250ms">
-                            <div class="feature-card">
+                    </div>
+                    <div class="row mt-4 pt-md-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card card-4">
                                 <div class="feature-card__icon">
                                     <span class="icon-materials"></span>
                                 </div>
@@ -876,7 +1110,7 @@
                                             <li><strong>Stainless Steel:</strong> Nickel, chrome, moly compositions</li>
                                         </ul>
                                     </div>
-                                    <div class="feature-card__text">
+                                    <div class="feature-card__text mt-3">
                                         <ul>
                                             <li><strong>Tubes:</strong> Heat transfer through walls (boilers, heaters,
                                                 exchangers)</li>
@@ -888,9 +1122,8 @@
                             </div>
                         </div>
 
-                        <!-- Card 5: Global Standards -->
-                        <div class="col-centered wow fadeInUp" data-wow-delay="300ms">
-                            <div class="feature-card">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="feature-card card-5">
                                 <div class="feature-card__icon">
                                     <span class="icon-standards"></span>
                                 </div>
@@ -958,8 +1191,8 @@
 
                 .testimonial-four__big-img img {
                     width: 75%;
-                    height: 75%;
-                    object-fit: cover;
+                    height: 85%;
+                    object-fit: contain;
                 }
 
                 .testimonial-four__wrap {
@@ -1034,7 +1267,7 @@
                     font-size: 2rem;
                     font-weight: 700;
                     color: #2c3e50;
-                    margin-bottom: 15px;
+                    margin-top: -128px;
                     position: relative;
                 }
 
@@ -1559,7 +1792,7 @@
                 <a href="about.html" class="thm-btn cta-one__btn">Discover more</a>
             </div>
         </div>
-    </section> -->
+    </section>
     <!--CTA One End-->
 
     <!--Site Footer Start-->
