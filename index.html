@@ -672,7 +672,7 @@
                                     .section-title-custom__title {
                                         position: relative;
                                         color: #2c3e50;
-                                        margin-bottom: 35px;
+                                        margin-top: 50px;
                                     }
 
                                     .section-title-custom__title::after {
@@ -699,6 +699,8 @@
 
                                     /* section title */
                                     .section-title-custom__tagline {
+                                        font-size: 22px;
+
                                         color: #2c3e50;
                                         font-weight: 600;
                                         letter-spacing: 0.5px;
@@ -711,7 +713,7 @@
                                     /* paragraph text */
                                     .about-custom__text {
                                         color: #2c3e50;
-                                        margin-top: 15px;
+                                        margin-top: 90px;
                                     }
 
                                     /* bottom section spacing */
@@ -722,6 +724,7 @@
                                     /* bottom text */
                                     .about-custom__bottom-text {
                                         color: #000000;
+                                        font-size: 21px;
                                     }
 
                                     /* icon styling */
@@ -748,248 +751,258 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Modern Feature Cards</title>
-            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+                rel="stylesheet">
             <style>
                 :root {
                     --theme-dark-bg: #13223c;
                     --theme-card-bg: #1a2c4e;
-                    /* Slightly lighter than main bg */
                     --theme-primary-blue: #0d6efd;
                     --theme-text-light: #e6e9ec;
                     --theme-text-muted: #aab4c0;
                 }
 
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
                 body {
                     font-family: 'Inter', sans-serif;
-                    background-color: var(--theme-dark-bg);
+                    background: var(--theme-dark-bg);
                     color: var(--theme-text-light);
-                    margin: 0;
+                    overflow-x: hidden;
                 }
 
                 .feature-section {
+                    min-height: 100vh;
                     padding: 100px 0;
-                    /* Subtle radial gradient to give depth to the dark background */
-                    background: radial-gradient(circle at top center, #1b335a 0%, var(--theme-dark-bg) 70%);
                     position: relative;
-                    overflow: hidden;
+                    background: linear-gradient(135deg, #0a1628 0%, var(--theme-dark-bg) 50%, #1a2847 100%);
                 }
 
-                /* Animated Background Shapes */
-                .bg-shape {
+                /* Animated Grid Background */
+                .grid-bg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image:
+                        linear-gradient(rgba(13, 110, 253, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(13, 110, 253, 0.03) 1px, transparent 1px);
+                    background-size: 50px 50px;
+                    opacity: 0.5;
+                    animation: gridMove 20s linear infinite;
+                }
+
+                @keyframes gridMove {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+
+                    100% {
+                        transform: translate(50px, 50px);
+                    }
+                }
+
+                /* Floating Orbs */
+                .orb {
                     position: absolute;
                     border-radius: 50%;
-                    filter: blur(80px);
+                    filter: blur(120px);
                     opacity: 0.15;
-                    z-index: 0;
+                    pointer-events: none;
                 }
 
-                .shape-1 {
-                    top: -10%;
-                    left: -5%;
-                    width: 400px;
-                    height: 400px;
-                    background: var(--theme-primary-blue);
-                    animation: float-bob-y 8s ease-in-out infinite;
+                .orb-1 {
+                    top: 20%;
+                    left: 10%;
+                    width: 600px;
+                    height: 600px;
+                    background: radial-gradient(circle, var(--theme-primary-blue), transparent);
+                    animation: floatOrb 20s ease-in-out infinite;
                 }
 
-                .shape-2 {
-                    bottom: -10%;
-                    right: -5%;
-                    width: 300px;
-                    height: 300px;
-                    background: #4facfe;
-                    animation: float-bob-y 10s ease-in-out infinite reverse;
+                .orb-2 {
+                    bottom: 10%;
+                    right: 15%;
+                    width: 500px;
+                    height: 500px;
+                    background: radial-gradient(circle, #667eea, transparent);
+                    animation: floatOrb 25s ease-in-out infinite reverse;
                 }
 
-                @keyframes float-bob-y {
+                @keyframes floatOrb {
 
                     0%,
                     100% {
-                        transform: translateY(0px);
+                        transform: translate(0, 0) scale(1);
                     }
 
                     50% {
-                        transform: translateY(-30px);
+                        transform: translate(50px, -50px) scale(1.1);
                     }
                 }
 
                 .container {
-                    max-width: 1200px;
+                    max-width: 1600px;
                     margin: 0 auto;
-                    padding: 0 20px;
+                    padding: 0 40px;
                     position: relative;
-                    z-index: 2;
+                    z-index: 10;
                 }
 
-                /* Grid System */
-                .row {
-                    display: flex;
-                    flex-wrap: wrap;
-                    margin: -15px;
-                    justify-content: center;
-                    /* Centers the last row */
+                /* Hero Header */
+                .hero-header {
+                    text-align: center;
+                    margin-bottom: 80px;
+                    animation: fadeIn 1s ease-out;
                 }
 
-                .col-lg-4,
-                .col-md-6 {
-                    padding: 15px;
-                    flex: 0 0 100%;
-                    max-width: 100%;
+                .hero-header h1 {
+                    font-size: 56px;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                    background: linear-gradient(135deg, #ffffff 0%, var(--theme-primary-blue) 50%, #4facfe 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    letter-spacing: -1px;
                 }
 
-                @media (min-width: 768px) {
-                    .col-md-6 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
+                .hero-header p {
+                    font-size: 20px;
+                    color: var(--theme-text-muted);
+                    max-width: 700px;
+                    margin: 0 auto;
+                    line-height: 1.6;
+                }
+
+                /* Bento Grid Layout */
+                .bento-grid {
+                    display: grid;
+                    grid-template-columns: repeat(12, 1fr);
+                    gap: 25px;
+                    padding: 0 20px;
+                }
+
+                /* Featured Large Card - Top Left */
+                .card-large {
+                    grid-column: span 7;
+                    grid-row: span 2;
+                }
+
+                /* Top Right Cards */
+                .card-top-right-1 {
+                    grid-column: span 5;
+                }
+
+                .card-top-right-2 {
+                    grid-column: span 5;
+                }
+
+                /* Bottom Cards */
+                .card-bottom-1 {
+                    grid-column: span 4;
+                }
+
+                .card-bottom-2 {
+                    grid-column: span 4;
+                }
+
+                .card-bottom-3 {
+                    grid-column: span 4;
+                }
+
+                @media (max-width: 1200px) {
+                    .card-large {
+                        grid-column: span 12;
+                        grid-row: span 1;
+                    }
+
+                    .card-top-right-1,
+                    .card-top-right-2 {
+                        grid-column: span 6;
+                    }
+
+                    .card-bottom-1,
+                    .card-bottom-2,
+                    .card-bottom-3 {
+                        grid-column: span 12;
                     }
                 }
 
-                @media (min-width: 992px) {
-                    .col-lg-4 {
-                        flex: 0 0 33.333%;
-                        max-width: 33.333%;
+                @media (max-width: 768px) {
+
+                    .card-top-right-1,
+                    .card-top-right-2 {
+                        grid-column: span 12;
                     }
                 }
 
-
-                /* Card Styling */
+                /* Feature Card Base */
                 .feature-card {
-                    background: var(--theme-card-bg);
-                    border-radius: 16px;
-                    padding: 40px 30px;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    /* Subtle border that glows on hover */
-                    border: 1px solid rgba(13, 110, 253, 0.1);
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                    /* Bouncy transition */
+                    background: linear-gradient(135deg, rgba(26, 44, 78, 0.95) 0%, rgba(19, 34, 60, 0.95) 100%);
+                    backdrop-filter: blur(10px);
+                    border-radius: 24px;
+                    padding: 40px;
+                    border: 1px solid rgba(13, 110, 253, 0.2);
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
                     opacity: 0;
-                    /* Hidden initially for animation */
-                    animation: fadeInUp 0.8s ease-out forwards;
+                    animation: slideUp 0.8s ease-out forwards;
                 }
 
-                /* Staggered Animation Delays */
-                .card-1 {
-                    animation-delay: 0.1s;
+                .feature-card::before {
+                    content: '';
+                    position: absolute;
+                    top: -50%;
+                    left: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle, rgba(13, 110, 253, 0.1) 0%, transparent 70%);
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
                 }
 
-                .card-2 {
-                    animation-delay: 0.2s;
+                .feature-card:hover::before {
+                    opacity: 1;
                 }
-
-                .card-3 {
-                    animation-delay: 0.3s;
-                }
-
-                .card-4 {
-                    animation-delay: 0.4s;
-                }
-
-                .card-5 {
-                    animation-delay: 0.5s;
-                }
-
 
                 .feature-card:hover {
                     transform: translateY(-10px);
                     border-color: var(--theme-primary-blue);
-                    /* The bright blue glow effect */
-                    box-shadow: 0 15px 40px rgba(13, 110, 253, 0.25);
+                    box-shadow: 0 30px 60px rgba(13, 110, 253, 0.25), 0 0 80px rgba(13, 110, 253, 0.15);
                 }
 
-                .feature-card__icon {
-                    width: 70px;
-                    height: 70px;
-                    /* Subtle glowing background for the icon */
-                    background: rgba(13, 110, 253, 0.1);
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 25px;
-                    color: var(--theme-primary-blue);
-                    font-size: 32px;
-                    transition: transform 0.3s ease;
+                /* Card Animations */
+                .feature-card:nth-child(1) {
+                    animation-delay: 0.1s;
                 }
 
-                .feature-card:hover .feature-card__icon {
-                    transform: scale(1.1) rotate(5deg);
-                    background: var(--theme-primary-blue);
-                    color: white;
+                .feature-card:nth-child(2) {
+                    animation-delay: 0.2s;
                 }
 
-
-                .feature-card__title {
-                    font-size: 22px;
-                    font-weight: 700;
-                    color: var(--theme-text-light);
-                    margin-bottom: 20px;
-                    line-height: 1.3;
+                .feature-card:nth-child(3) {
+                    animation-delay: 0.3s;
                 }
 
-                .feature-card__title a {
-                    color: inherit;
-                    text-decoration: none;
-                    transition: color 0.3s ease;
-                    background: linear-gradient(to right, var(--theme-primary-blue), var(--theme-primary-blue));
-                    background-size: 0% 2px;
-                    background-repeat: no-repeat;
-                    background-position: bottom left;
+                .feature-card:nth-child(4) {
+                    animation-delay: 0.4s;
                 }
 
-                .feature-card__title a:hover {
-                    color: var(--theme-primary-blue);
-                    background-size: 100% 2px;
+                .feature-card:nth-child(5) {
+                    animation-delay: 0.5s;
                 }
 
-                .feature-card__content {
-                    flex: 1;
-                    color: var(--theme-text-muted);
-                    font-size: 15px;
-                    line-height: 1.7;
-                }
-
-                /* Custom List Styling */
-                .feature-card__text ul {
-                    margin: 0;
-                    padding-left: 0;
-                    list-style: none;
-                }
-
-                .feature-card__text li {
-                    margin-bottom: 12px;
-                    position: relative;
-                    padding-left: 24px;
-                }
-
-                /* Using a sleek arrow instead of standard bullets */
-                .feature-card__text li::before {
-                    content: "➤";
-                    position: absolute;
-                    left: 0;
-                    top: 2px;
-                    color: var(--theme-primary-blue);
-                    font-size: 12px;
-                }
-
-                .feature-card__text li strong {
-                    color: var(--theme-text-light);
-                    font-weight: 600;
-                }
-
-                .feature-card__text ul ul {
-                    margin-top: 10px;
-                    padding-left: 15px;
-                    border-left: 2px solid rgba(13, 110, 253, 0.2);
-                }
-
-                @keyframes fadeInUp {
+                @keyframes slideUp {
                     from {
                         opacity: 0;
-                        transform: translateY(40px);
+                        transform: translateY(50px);
                     }
 
                     to {
@@ -998,119 +1011,252 @@
                     }
                 }
 
-                /* Icons - Replaced emojis with slightly cleaner unicode for better styling */
-                .icon-petroleum::before {
-                    content: "⚡";
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
                 }
 
-                .icon-petrochemical::before {
-                    content: "⚙️";
+                /* Icon Badge */
+                .icon-badge {
+                    width: 80px;
+                    height: 80px;
+                    background: linear-gradient(135deg, rgba(13, 110, 253, 0.2), rgba(79, 172, 254, 0.2));
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 36px;
+                    margin-bottom: 25px;
+                    position: relative;
+                    transition: all 0.4s ease;
                 }
 
-                .icon-oil-rig::before {
-                    content: "🏗️";
+                .icon-badge::after {
+                    content: '';
+                    position: absolute;
+                    inset: -3px;
+                    border-radius: 20px;
+                    background: linear-gradient(135deg, var(--theme-primary-blue), #4facfe);
+                    opacity: 0;
+                    z-index: -1;
+                    transition: opacity 0.4s ease;
                 }
 
-                .icon-standards::before {
-                    content: "📜";
+                .feature-card:hover .icon-badge {
+                    transform: scale(1.1) rotate(-5deg);
                 }
 
-                .icon-materials::before {
-                    content: "⛓️";
+                .feature-card:hover .icon-badge::after {
+                    opacity: 1;
+                }
+
+                /* Large Card Special Styling */
+                .card-large .icon-badge {
+                    width: 100px;
+                    height: 100px;
+                    font-size: 48px;
+                    margin-bottom: 30px;
+                }
+
+                .card-large .feature-card__title {
+                    font-size: 32px;
+                    margin-bottom: 25px;
+                }
+
+                /* Title */
+                .feature-card__title {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: var(--theme-text-light);
+                    margin-bottom: 20px;
+                    line-height: 1.3;
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .feature-card__title a {
+                    color: inherit;
+                    text-decoration: none;
+                    position: relative;
+                    background: linear-gradient(90deg, var(--theme-primary-blue), #4facfe);
+                    background-size: 0% 3px;
+                    background-repeat: no-repeat;
+                    background-position: bottom left;
+                    transition: all 0.4s ease;
+                    padding-bottom: 5px;
+                }
+
+                .feature-card__title a:hover {
+                    background-size: 100% 3px;
+                    color: var(--theme-primary-blue);
+                }
+
+                /* Content */
+                .feature-card__content {
+                    color: var(--theme-text-muted);
+                    font-size: 15px;
+                    line-height: 1.8;
+                }
+
+                .feature-card__content>p {
+                    margin-bottom: 20px;
+                    color: var(--theme-text-muted);
+                    font-size: 16px;
+                }
+
+                /* Lists */
+                .feature-card__text ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .feature-card__text li {
+                    padding: 12px 0 12px 35px;
+                    position: relative;
+                    transition: all 0.3s ease;
+                    border-radius: 8px;
+                }
+
+                .feature-card__text li:hover {
+                    background: rgba(13, 110, 253, 0.05);
+                    padding-left: 40px;
+                }
+
+                .feature-card__text li::before {
+                    content: "▸";
+                    position: absolute;
+                    left: 10px;
+                    top: 12px;
+                    color: var(--theme-primary-blue);
+                    font-size: 18px;
+                    font-weight: bold;
+                    transition: all 0.3s ease;
+                }
+
+                .feature-card__text li:hover::before {
+                    transform: translateX(5px);
+                    color: #4facfe;
+                }
+
+                .feature-card__text li strong {
+                    color: var(--theme-text-light);
+                    font-weight: 600;
+                }
+
+                .feature-card__text ul ul {
+                    margin-top: 12px;
+                    padding-left: 15px;
+                    border-left: 2px solid rgba(13, 110, 253, 0.3);
+                }
+
+                .feature-card__text .mt-3 {
+                    margin-top: 25px;
+                    padding-top: 25px;
+                    border-top: 1px solid rgba(13, 110, 253, 0.2);
+                }
+
+                /* Glow Effect on Hover */
+                .glow-line {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(90deg, transparent, var(--theme-primary-blue), transparent);
+                    transform: scaleX(0);
+                    transition: transform 0.5s ease;
+                }
+
+                .feature-card:hover .glow-line {
+                    transform: scaleX(1);
+                }
+
+                /* Responsive */
+                @media (max-width: 1200px) {
+                    .hero-header h1 {
+                        font-size: 44px;
+                    }
+
+                    .container {
+                        padding: 0 30px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .feature-section {
+                        padding: 60px 0;
+                    }
+
+                    .hero-header {
+                        margin-bottom: 50px;
+                    }
+
+                    .hero-header h1 {
+                        font-size: 36px;
+                    }
+
+                    .hero-header p {
+                        font-size: 16px;
+                    }
+
+                    .container {
+                        padding: 0 20px;
+                    }
+
+                    .bento-grid {
+                        gap: 20px;
+                        padding: 0;
+                    }
+
+                    .feature-card {
+                        padding: 30px;
+                    }
+
+                    .card-large .feature-card__title {
+                        font-size: 24px;
+                    }
                 }
             </style>
         </head>
 
         <body>
             <section class="feature-section">
-                <div class="bg-shape shape-1"></div>
-                <div class="bg-shape shape-2"></div>
+                <div class="grid-bg"></div>
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
 
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="feature-card card-1">
-                                <div class="feature-card__icon">
-                                    <span class="icon-petroleum"></span>
-                                </div>
-                                <h3 class="feature-card__title">
-                                    <a href="services-4.html">Wide Dimensional Range</a>
-                                </h3>
-                                <div class="feature-card__content">
-                                    <div class="feature-card__text">
-                                        <ul>
-                                            <li>Outer Diameter: 8mm to 1016mm</li>
-                                            <li>Wall Thickness: 1mm to 76.2mm</li>
-                                            <li>Certifications: MTC, IBR Certified</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="feature-card card-2">
-                                <div class="feature-card__icon">
-                                    <span class="icon-oil-rig"></span>
-                                </div>
-                                <h3 class="feature-card__title">
-                                    <a href="services-4.html">Key Applications</a>
-                                </h3>
-                                <div class="feature-card__content">
-                                    <div class="feature-card__text">
-                                        <ul>
-                                            <li>Steam and Line Piping</li>
-                                            <li>Boilers and Superheaters</li>
-                                            <li>Economizers and Water Walls</li>
-                                            <li>Headers and Air Pre-heaters</li>
-                                            <li>Heat Exchangers and Rifle Bore Tubes</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="feature-card card-3">
-                                <div class="feature-card__icon">
-                                    <span class="icon-petrochemical"></span>
-                                </div>
-                                <h3 class="feature-card__title">
-                                    <a href="services-4.html">Manufacturing Methods</a>
-                                </h3>
-                                <div class="feature-card__content">
-                                    <p class="feature-card__text">Precision-built products in both seamless and welded
-                                        formats:</p>
-                                    <div class="feature-card__text">
-                                        <ul>
-                                            <li><strong>Seamless:</strong> Hot Finished (HFS), Cold Drawn (CDS)</li>
-                                            <li><strong>Welded:</strong> ERW, SAW, CDW, SW, MMAW</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="hero-header">
+                        <h1>Premium Steel Solutions</h1>
+                        <p>Industry-leading tubes and pipes engineered to global standards with precision and
+                            reliability</p>
                     </div>
-                    <div class="row mt-4 pt-md-4">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="feature-card card-4">
-                                <div class="feature-card__icon">
-                                    <span class="icon-materials"></span>
-                                </div>
-                                <h3 class="feature-card__title">
-                                    <a href="services-4.html">Material Grades & Types</a>
-                                </h3>
-                                <div class="feature-card__content">
-                                    <p class="feature-card__text">Steel tubes and pipes in various chemistries:</p>
-                                    <div class="feature-card__text">
-                                        <ul>
-                                            <li><strong>Carbon Steel:</strong> Low, medium, and high carbon, with
-                                                manganese</li>
-                                            <li><strong>Alloy Steel:</strong> Chrome & Moly based grades</li>
-                                            <li><strong>Stainless Steel:</strong> Nickel, chrome, moly compositions</li>
-                                        </ul>
-                                    </div>
-                                    <div class="feature-card__text mt-3">
+
+                    <div class="bento-grid">
+                        <!-- Large Featured Card -->
+                        <div class="feature-card card-large">
+                            <div class="icon-badge">⛓️</div>
+                            <h3 class="feature-card__title">
+                                <a href="services-4.html">Material Grades & Types</a>
+                            </h3>
+                            <div class="feature-card__content">
+                                <p>Steel tubes and pipes in various chemistries:</p>
+                                <div class="feature-card__text">
+                                    <ul>
+                                        <li><strong>Carbon Steel:</strong> Low, medium, and high carbon, with manganese
+                                        </li>
+                                        <li><strong>Alloy Steel:</strong> Chrome & Moly based grades</li>
+                                        <li><strong>Stainless Steel:</strong> Nickel, chrome, moly compositions</li>
+                                    </ul>
+                                    <div class="mt-3">
                                         <ul>
                                             <li><strong>Tubes:</strong> Heat transfer through walls (boilers, heaters,
                                                 exchangers)</li>
@@ -1120,31 +1266,83 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="glow-line"></div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6">
-                            <div class="feature-card card-5">
-                                <div class="feature-card__icon">
-                                    <span class="icon-standards"></span>
-                                </div>
-                                <h3 class="feature-card__title">
-                                    <a href="services-4.html">Global Standards Compliance</a>
-                                </h3>
-                                <div class="feature-card__content">
-                                    <p class="feature-card__text">Our products comply with international specifications:
-                                    </p>
-                                    <div class="feature-card__text">
-                                        <ul>
-                                            <li><strong>ASME / ASTM:</strong> A178, A179, A192, A210, A213, A312, A335,
-                                                A106, A53, A333</li>
-                                            <li><strong>DIN & EN:</strong> DIN 17175, EN 10216-2, St35.8, 16Mo3,
-                                                13CrMo4-5, X20CrMoV11-1</li>
-                                            <li><strong>BS & Others:</strong> BS 3059, BS 6323, GB 5310 (20G, 15CrMoG),
-                                                GOST Grades</li>
-                                        </ul>
-                                    </div>
+                        <!-- Top Right Cards -->
+                        <div class="feature-card card-top-right-1">
+                            <div class="icon-badge">⚡</div>
+                            <h3 class="feature-card__title">
+                                <a href="services-4.html">Wide Dimensional Range</a>
+                            </h3>
+                            <div class="feature-card__content">
+                                <div class="feature-card__text">
+                                    <ul>
+                                        <li>Outer Diameter: 8mm to 1016mm</li>
+                                        <li>Wall Thickness: 1mm to 76.2mm</li>
+                                        <li>Certifications: MTC, IBR Certified</li>
+                                    </ul>
                                 </div>
                             </div>
+                            <div class="glow-line"></div>
+                        </div>
+
+                        <div class="feature-card card-top-right-2">
+                            <div class="icon-badge">⚙️</div>
+                            <h3 class="feature-card__title">
+                                <a href="services-4.html">Manufacturing Methods</a>
+                            </h3>
+                            <div class="feature-card__content">
+                                <p>Precision-built products in both seamless and welded formats:</p>
+                                <div class="feature-card__text">
+                                    <ul>
+                                        <li><strong>Seamless:</strong> Hot Finished (HFS), Cold Drawn (CDS)</li>
+                                        <li><strong>Welded:</strong> ERW, SAW, CDW, SW, MMAW</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="glow-line"></div>
+                        </div>
+
+                        <!-- Bottom Row Cards -->
+                        <div class="feature-card card-bottom-1">
+                            <div class="icon-badge">🏗️</div>
+                            <h3 class="feature-card__title">
+                                <a href="services-4.html">Key Applications</a>
+                            </h3>
+                            <div class="feature-card__content">
+                                <div class="feature-card__text">
+                                    <ul>
+                                        <li>Steam and Line Piping</li>
+                                        <li>Boilers and Superheaters</li>
+                                        <li>Economizers and Water Walls</li>
+                                        <li>Headers and Air Pre-heaters</li>
+                                        <li>Heat Exchangers and Rifle Bore Tubes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="glow-line"></div>
+                        </div>
+
+                        <div class="feature-card card-bottom-2">
+                            <div class="icon-badge">📜</div>
+                            <h3 class="feature-card__title">
+                                <a href="services-4.html">Global Standards Compliance</a>
+                            </h3>
+                            <div class="feature-card__content">
+                                <p>Our products comply with international specifications:</p>
+                                <div class="feature-card__text">
+                                    <ul>
+                                        <li><strong>ASME / ASTM:</strong> A178, A179, A192, A210, A213, A312, A335,
+                                            A106, A53, A333</li>
+                                        <li><strong>DIN & EN:</strong> DIN 17175, EN 10216-2, St35.8, 16Mo3, 13CrMo4-5,
+                                            X20CrMoV11-1</li>
+                                        <li><strong>BS & Others:</strong> BS 3059, BS 6323, GB 5310 (20G, 15CrMoG), GOST
+                                            Grades</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="glow-line"></div>
                         </div>
                     </div>
                 </div>
@@ -1152,8 +1350,6 @@
         </body>
 
         </html>
-        <!--Feature One End-->
-        <!--Testimonial Four Start-->
         <!DOCTYPE html>
         <html lang="en">
 
@@ -1191,7 +1387,7 @@
 
                 .testimonial-four__big-img img {
                     width: 75%;
-                    height: 85%;
+                    height: 89.4%;
                     object-fit: contain;
                 }
 
@@ -1796,6 +1992,7 @@
     <!--CTA One End-->
 
     <!--Site Footer Start-->
+
     <footer class="site-footer">
         <div class="site-footer__img">
             <img src="assets/images/resources/site-footer-img-1.jpg" alt="">
@@ -1898,6 +2095,8 @@
         </div>
     </footer>
     <!--Site Footer End-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
     </div><!-- /.page-wrapper -->
