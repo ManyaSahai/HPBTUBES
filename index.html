@@ -699,7 +699,7 @@
 
                                     /* section title */
                                     .section-title-custom__tagline {
-                                        font-size: 22px;
+                                        font-size: 26px;
 
                                         color: #2c3e50;
                                         font-weight: 600;
@@ -750,16 +750,28 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Modern Feature Cards</title>
+            <title>Professional Steel Solutions</title>
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
                 rel="stylesheet">
             <style>
                 :root {
-                    --theme-dark-bg: #13223c;
-                    --theme-card-bg: #1a2c4e;
-                    --theme-primary-blue: #0d6efd;
-                    --theme-text-light: #e6e9ec;
-                    --theme-text-muted: #aab4c0;
+                    /* Professional Corporate Slate Theme */
+                    --bg-dark: #0f172a;
+                    /* Slate 900 */
+                    --bg-gradient: #1e293b;
+                    /* Slate 800 */
+                    --card-bg: #1e293b;
+                    /* Slate 800 */
+                    --card-border: #334155;
+                    /* Slate 700 */
+                    --accent-primary: #3b82f6;
+                    /* Blue 500 */
+                    --accent-hover: #60a5fa;
+                    /* Blue 400 */
+                    --text-main: #f8fafc;
+                    /* Slate 50 */
+                    --text-muted: #94a3b8;
+                    /* Slate 400 */
                 }
 
                 * {
@@ -770,84 +782,37 @@
 
                 body {
                     font-family: 'Inter', sans-serif;
-                    background: var(--theme-dark-bg);
-                    color: var(--theme-text-light);
+                    background-color: var(--bg-dark);
+                    color: var(--text-main);
                     overflow-x: hidden;
                 }
 
                 .feature-section {
                     min-height: 100vh;
-                    padding: 100px 0;
+                    padding: 80px 0;
                     position: relative;
-                    background: linear-gradient(135deg, #0a1628 0%, var(--theme-dark-bg) 50%, #1a2847 100%);
+                    background: linear-gradient(180deg, var(--bg-dark) 0%, #020617 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
-                /* Animated Grid Background */
-                .grid-bg {
+                /* Subtle Geometric Background Pattern */
+                .bg-pattern {
                     position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background-image:
-                        linear-gradient(rgba(13, 110, 253, 0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(13, 110, 253, 0.03) 1px, transparent 1px);
-                    background-size: 50px 50px;
-                    opacity: 0.5;
-                    animation: gridMove 20s linear infinite;
-                }
-
-                @keyframes gridMove {
-                    0% {
-                        transform: translate(0, 0);
-                    }
-
-                    100% {
-                        transform: translate(50px, 50px);
-                    }
-                }
-
-                /* Floating Orbs */
-                .orb {
-                    position: absolute;
-                    border-radius: 50%;
-                    filter: blur(120px);
-                    opacity: 0.15;
+                    background-image: radial-gradient(var(--card-border) 1px, transparent 1px);
+                    background-size: 40px 40px;
+                    opacity: 0.1;
                     pointer-events: none;
                 }
 
-                .orb-1 {
-                    top: 20%;
-                    left: 10%;
-                    width: 600px;
-                    height: 600px;
-                    background: radial-gradient(circle, var(--theme-primary-blue), transparent);
-                    animation: floatOrb 20s ease-in-out infinite;
-                }
-
-                .orb-2 {
-                    bottom: 10%;
-                    right: 15%;
-                    width: 500px;
-                    height: 500px;
-                    background: radial-gradient(circle, #667eea, transparent);
-                    animation: floatOrb 25s ease-in-out infinite reverse;
-                }
-
-                @keyframes floatOrb {
-
-                    0%,
-                    100% {
-                        transform: translate(0, 0) scale(1);
-                    }
-
-                    50% {
-                        transform: translate(50px, -50px) scale(1.1);
-                    }
-                }
-
                 .container {
-                    max-width: 1600px;
+                    max-width: 1800px;
+                    width: 100%;
                     margin: 0 auto;
                     padding: 0 40px;
                     position: relative;
@@ -857,128 +822,62 @@
                 /* Hero Header */
                 .hero-header {
                     text-align: center;
-                    margin-bottom: 80px;
-                    animation: fadeIn 1s ease-out;
+                    margin-bottom: 70px;
+                    animation: fadeIn 0.8s ease-out;
                 }
 
                 .hero-header h1 {
-                    font-size: 56px;
+                    font-size: 42px;
                     font-weight: 700;
-                    margin-bottom: 20px;
-                    background: linear-gradient(135deg, #ffffff 0%, var(--theme-primary-blue) 50%, #4facfe 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                    letter-spacing: -1px;
+                    margin-bottom: 16px;
+                    color: var(--text-main);
+                    letter-spacing: -0.5px;
                 }
 
                 .hero-header p {
-                    font-size: 20px;
-                    color: var(--theme-text-muted);
-                    max-width: 700px;
+                    font-size: 18px;
+                    color: var(--text-muted);
+                    max-width: 600px;
                     margin: 0 auto;
                     line-height: 1.6;
                 }
 
-                /* Bento Grid Layout */
-                .bento-grid {
-                    display: grid;
-                    grid-template-columns: repeat(12, 1fr);
-                    gap: 25px;
-                    padding: 0 20px;
+                /* --- FLEXBOX GRID SYSTEM --- */
+                .card-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    /* This ensures centered items on the last row */
+                    gap: 24px;
+                    width: 100%;
                 }
 
-                /* Featured Large Card - Top Left */
-                .card-large {
-                    grid-column: span 7;
-                    grid-row: span 2;
-                }
-
-                /* Top Right Cards */
-                .card-top-right-1 {
-                    grid-column: span 5;
-                }
-
-                .card-top-right-2 {
-                    grid-column: span 5;
-                }
-
-                /* Bottom Cards */
-                .card-bottom-1 {
-                    grid-column: span 4;
-                }
-
-                .card-bottom-2 {
-                    grid-column: span 4;
-                }
-
-                .card-bottom-3 {
-                    grid-column: span 4;
-                }
-
-                @media (max-width: 1200px) {
-                    .card-large {
-                        grid-column: span 12;
-                        grid-row: span 1;
-                    }
-
-                    .card-top-right-1,
-                    .card-top-right-2 {
-                        grid-column: span 6;
-                    }
-
-                    .card-bottom-1,
-                    .card-bottom-2,
-                    .card-bottom-3 {
-                        grid-column: span 12;
-                    }
-                }
-
-                @media (max-width: 768px) {
-
-                    .card-top-right-1,
-                    .card-top-right-2 {
-                        grid-column: span 12;
-                    }
-                }
-
-                /* Feature Card Base */
+                /* Feature Card Styles */
                 .feature-card {
-                    background: linear-gradient(135deg, rgba(26, 44, 78, 0.95) 0%, rgba(19, 34, 60, 0.95) 100%);
-                    backdrop-filter: blur(10px);
-                    border-radius: 24px;
-                    padding: 40px;
-                    border: 1px solid rgba(13, 110, 253, 0.2);
+                    /* Desktop: Approx 20% width minus gap to fit 5 */
+                    flex: 0 0 calc(20% - 20px);
+                    background: var(--card-bg);
+                    border: 1px solid var(--card-border);
+                    border-radius: 12px;
+                    padding: 32px 24px;
                     position: relative;
-                    overflow: hidden;
-                    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    display: flex;
+                    flex-direction: column;
                     opacity: 0;
-                    animation: slideUp 0.8s ease-out forwards;
-                }
-
-                .feature-card::before {
-                    content: '';
-                    position: absolute;
-                    top: -50%;
-                    left: -50%;
-                    width: 200%;
-                    height: 200%;
-                    background: radial-gradient(circle, rgba(13, 110, 253, 0.1) 0%, transparent 70%);
-                    opacity: 0;
-                    transition: opacity 0.5s ease;
-                }
-
-                .feature-card:hover::before {
-                    opacity: 1;
+                    animation: slideUp 0.6s ease-out forwards;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
                 }
 
                 .feature-card:hover {
-                    transform: translateY(-10px);
-                    border-color: var(--theme-primary-blue);
-                    box-shadow: 0 30px 60px rgba(13, 110, 253, 0.25), 0 0 80px rgba(13, 110, 253, 0.15);
+                    transform: translateY(-5px);
+                    border-color: var(--accent-primary);
+                    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                    background: #253346;
+                    /* Slightly lighter on hover */
                 }
 
-                /* Card Animations */
+                /* Animation Stagger */
                 .feature-card:nth-child(1) {
                     animation-delay: 0.1s;
                 }
@@ -1002,7 +901,7 @@
                 @keyframes slideUp {
                     from {
                         opacity: 0;
-                        transform: translateY(50px);
+                        transform: translateY(20px);
                     }
 
                     to {
@@ -1014,214 +913,151 @@
                 @keyframes fadeIn {
                     from {
                         opacity: 0;
-                        transform: translateY(-20px);
                     }
 
                     to {
                         opacity: 1;
-                        transform: translateY(0);
                     }
                 }
 
-                /* Icon Badge */
-                .icon-badge {
-                    width: 80px;
-                    height: 80px;
-                    background: linear-gradient(135deg, rgba(13, 110, 253, 0.2), rgba(79, 172, 254, 0.2));
-                    border-radius: 20px;
+                /* Icon Area */
+                .icon-wrapper {
+                    width: 56px;
+                    height: 56px;
+                    background: rgba(59, 130, 246, 0.1);
+                    /* Subtle Blue Tint */
+                    border-radius: 10px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-size: 36px;
-                    margin-bottom: 25px;
-                    position: relative;
-                    transition: all 0.4s ease;
+                    font-size: 24px;
+                    margin-bottom: 24px;
+                    color: var(--accent-primary);
+                    border: 1px solid rgba(59, 130, 246, 0.2);
+                    transition: all 0.3s ease;
                 }
 
-                .icon-badge::after {
-                    content: '';
-                    position: absolute;
-                    inset: -3px;
-                    border-radius: 20px;
-                    background: linear-gradient(135deg, var(--theme-primary-blue), #4facfe);
-                    opacity: 0;
-                    z-index: -1;
-                    transition: opacity 0.4s ease;
-                }
-
-                .feature-card:hover .icon-badge {
-                    transform: scale(1.1) rotate(-5deg);
-                }
-
-                .feature-card:hover .icon-badge::after {
-                    opacity: 1;
-                }
-
-                /* Large Card Special Styling */
-                .card-large .icon-badge {
-                    width: 100px;
-                    height: 100px;
-                    font-size: 48px;
-                    margin-bottom: 30px;
-                }
-
-                .card-large .feature-card__title {
-                    font-size: 32px;
-                    margin-bottom: 25px;
+                .feature-card:hover .icon-wrapper {
+                    background: var(--accent-primary);
+                    color: white;
+                    border-color: var(--accent-primary);
                 }
 
                 /* Title */
-                .feature-card__title {
-                    font-size: 24px;
+                .card-title {
+                    font-size: 18px;
                     font-weight: 700;
-                    color: var(--theme-text-light);
-                    margin-bottom: 20px;
-                    line-height: 1.3;
-                    position: relative;
-                    display: inline-block;
+                    color: var(--text-main);
+                    margin-bottom: 16px;
+                    min-height: 40px;
+                    /* Aligns content */
+                    display: flex;
+                    align-items: center;
                 }
 
-                .feature-card__title a {
-                    color: inherit;
+                .card-title a {
                     text-decoration: none;
-                    position: relative;
-                    background: linear-gradient(90deg, var(--theme-primary-blue), #4facfe);
-                    background-size: 0% 3px;
-                    background-repeat: no-repeat;
-                    background-position: bottom left;
-                    transition: all 0.4s ease;
-                    padding-bottom: 5px;
+                    color: inherit;
+                    transition: color 0.3s ease;
                 }
 
-                .feature-card__title a:hover {
-                    background-size: 100% 3px;
-                    color: var(--theme-primary-blue);
+                .card-title a:hover {
+                    color: var(--accent-primary);
                 }
 
-                /* Content */
-                .feature-card__content {
-                    color: var(--theme-text-muted);
-                    font-size: 15px;
-                    line-height: 1.8;
+                /* Content & Lists */
+                .card-content {
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    line-height: 1.6;
+                    flex-grow: 1;
                 }
 
-                .feature-card__content>p {
-                    margin-bottom: 20px;
-                    color: var(--theme-text-muted);
-                    font-size: 16px;
-                }
-
-                /* Lists */
-                .feature-card__text ul {
+                .styled-list {
                     list-style: none;
                     padding: 0;
                     margin: 0;
                 }
 
-                .feature-card__text li {
-                    padding: 12px 0 12px 35px;
+                .styled-list li {
                     position: relative;
-                    transition: all 0.3s ease;
-                    border-radius: 8px;
+                    padding-left: 16px;
+                    margin-bottom: 8px;
+                    font-size: 13.5px;
                 }
 
-                .feature-card__text li:hover {
-                    background: rgba(13, 110, 253, 0.05);
-                    padding-left: 40px;
-                }
-
-                .feature-card__text li::before {
-                    content: "▸";
+                .styled-list li::before {
+                    content: "•";
+                    color: var(--accent-primary);
                     position: absolute;
-                    left: 10px;
-                    top: 12px;
-                    color: var(--theme-primary-blue);
-                    font-size: 18px;
+                    left: 0;
                     font-weight: bold;
-                    transition: all 0.3s ease;
                 }
 
-                .feature-card__text li:hover::before {
-                    transform: translateX(5px);
-                    color: #4facfe;
-                }
-
-                .feature-card__text li strong {
-                    color: var(--theme-text-light);
+                .styled-list strong {
+                    color: var(--text-main);
                     font-weight: 600;
                 }
 
-                .feature-card__text ul ul {
-                    margin-top: 12px;
-                    padding-left: 15px;
-                    border-left: 2px solid rgba(13, 110, 253, 0.3);
+                .separator {
+                    height: 1px;
+                    background: var(--card-border);
+                    margin: 16px 0;
+                    width: 100%;
                 }
 
-                .feature-card__text .mt-3 {
-                    margin-top: 25px;
-                    padding-top: 25px;
-                    border-top: 1px solid rgba(13, 110, 253, 0.2);
-                }
-
-                /* Glow Effect on Hover */
-                .glow-line {
+                /* Accent Line on Bottom */
+                .bottom-accent {
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     width: 100%;
-                    height: 2px;
-                    background: linear-gradient(90deg, transparent, var(--theme-primary-blue), transparent);
+                    height: 3px;
+                    background: var(--accent-primary);
                     transform: scaleX(0);
-                    transition: transform 0.5s ease;
+                    transform-origin: left;
+                    transition: transform 0.3s ease;
+                    border-bottom-left-radius: 12px;
+                    border-bottom-right-radius: 12px;
                 }
 
-                .feature-card:hover .glow-line {
+                .feature-card:hover .bottom-accent {
                     transform: scaleX(1);
                 }
 
-                /* Responsive */
-                @media (max-width: 1200px) {
-                    .hero-header h1 {
-                        font-size: 44px;
-                    }
+                /* --- RESPONSIVE LOGIC --- */
 
-                    .container {
-                        padding: 0 30px;
+                /* Laptop View (approx 1024px to 1600px) */
+                /* Logic: 3 cards top row, 2 cards bottom row. 
+           Flexbox 'justify-content: center' handles the centering automatically */
+                @media (max-width: 1600px) {
+                    .feature-card {
+                        /* 33% width roughly, accounting for gaps */
+                        flex: 0 0 calc(33.333% - 24px);
+                        max-width: 400px;
+                        /* Prevent them getting too wide */
                     }
                 }
 
-                @media (max-width: 768px) {
-                    .feature-section {
-                        padding: 60px 0;
-                    }
-
-                    .hero-header {
-                        margin-bottom: 50px;
+                /* Tablet View (Stacked 2 per row) */
+                @media (max-width: 1024px) {
+                    .feature-card {
+                        flex: 0 0 calc(50% - 24px);
                     }
 
                     .hero-header h1 {
-                        font-size: 36px;
+                        font-size: 32px;
                     }
+                }
 
-                    .hero-header p {
-                        font-size: 16px;
+                /* Mobile View (Stacked 1 per row) */
+                @media (max-width: 650px) {
+                    .feature-card {
+                        flex: 0 0 100%;
                     }
 
                     .container {
                         padding: 0 20px;
-                    }
-
-                    .bento-grid {
-                        gap: 20px;
-                        padding: 0;
-                    }
-
-                    .feature-card {
-                        padding: 30px;
-                    }
-
-                    .card-large .feature-card__title {
-                        font-size: 24px;
                     }
                 }
             </style>
@@ -1229,120 +1065,107 @@
 
         <body>
             <section class="feature-section">
-                <div class="grid-bg"></div>
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
+                <div class="bg-pattern"></div>
 
                 <div class="container">
                     <div class="hero-header">
                         <h1>Premium Steel Solutions</h1>
-                        <p>Industry-leading tubes and pipes engineered to global standards with precision and
-                            reliability</p>
+                        <p>Engineered to global standards with precision and reliability.</p>
                     </div>
 
-                    <div class="bento-grid">
-                        <!-- Large Featured Card -->
-                        <div class="feature-card card-large">
-                            <div class="icon-badge">⛓️</div>
-                            <h3 class="feature-card__title">
-                                <a href="services-4.html">Material Grades & Types</a>
-                            </h3>
-                            <div class="feature-card__content">
-                                <p>Steel tubes and pipes in various chemistries:</p>
-                                <div class="feature-card__text">
-                                    <ul>
-                                        <li><strong>Carbon Steel:</strong> Low, medium, and high carbon, with manganese
-                                        </li>
-                                        <li><strong>Alloy Steel:</strong> Chrome & Moly based grades</li>
-                                        <li><strong>Stainless Steel:</strong> Nickel, chrome, moly compositions</li>
-                                    </ul>
-                                    <div class="mt-3">
-                                        <ul>
-                                            <li><strong>Tubes:</strong> Heat transfer through walls (boilers, heaters,
-                                                exchangers)</li>
-                                            <li><strong>Pipes:</strong> Fluid and steam transfer through bore
-                                                (pipelines, process systems)</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                    <div class="card-container">
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="icon">⛓️</i>
                             </div>
-                            <div class="glow-line"></div>
+                            <h3 class="card-title">
+                                <a href="services-4.html">Material Grades</a>
+                            </h3>
+                            <div class="card-content">
+                                <ul class="styled-list">
+                                    <li><strong>Carbon:</strong> Low, med, high C</li>
+                                    <li><strong>Alloy:</strong> Cr & Mo based</li>
+                                    <li><strong>Stainless:</strong> Ni, Cr, Mo</li>
+                                </ul>
+                                <div class="separator"></div>
+                                <ul class="styled-list">
+                                    <li><strong>Tubes:</strong> Heat transfer</li>
+                                    <li><strong>Pipes:</strong> Fluid transfer</li>
+                                </ul>
+                            </div>
+                            <div class="bottom-accent"></div>
                         </div>
 
-                        <!-- Top Right Cards -->
-                        <div class="feature-card card-top-right-1">
-                            <div class="icon-badge">⚡</div>
-                            <h3 class="feature-card__title">
-                                <a href="services-4.html">Wide Dimensional Range</a>
-                            </h3>
-                            <div class="feature-card__content">
-                                <div class="feature-card__text">
-                                    <ul>
-                                        <li>Outer Diameter: 8mm to 1016mm</li>
-                                        <li>Wall Thickness: 1mm to 76.2mm</li>
-                                        <li>Certifications: MTC, IBR Certified</li>
-                                    </ul>
-                                </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="icon">⚡</i>
                             </div>
-                            <div class="glow-line"></div>
+                            <h3 class="card-title">
+                                <a href="services-4.html">Dimensions</a>
+                            </h3>
+                            <div class="card-content">
+                                <ul class="styled-list">
+                                    <li><strong>OD:</strong> 8mm - 1016mm</li>
+                                    <li><strong>Wall:</strong> 1mm - 76.2mm</li>
+                                    <li><strong>Cert:</strong> MTC, IBR</li>
+                                    <li>Custom lengths available</li>
+                                </ul>
+                            </div>
+                            <div class="bottom-accent"></div>
                         </div>
 
-                        <div class="feature-card card-top-right-2">
-                            <div class="icon-badge">⚙️</div>
-                            <h3 class="feature-card__title">
-                                <a href="services-4.html">Manufacturing Methods</a>
-                            </h3>
-                            <div class="feature-card__content">
-                                <p>Precision-built products in both seamless and welded formats:</p>
-                                <div class="feature-card__text">
-                                    <ul>
-                                        <li><strong>Seamless:</strong> Hot Finished (HFS), Cold Drawn (CDS)</li>
-                                        <li><strong>Welded:</strong> ERW, SAW, CDW, SW, MMAW</li>
-                                    </ul>
-                                </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="icon">⚙️</i>
                             </div>
-                            <div class="glow-line"></div>
+                            <h3 class="card-title">
+                                <a href="services-4.html">Manufacturing</a>
+                            </h3>
+                            <div class="card-content">
+                                <ul class="styled-list">
+                                    <li><strong>Seamless:</strong><br>Hot Finished, Cold Drawn</li>
+                                    <div class="separator" style="margin: 8px 0; opacity: 0.5;"></div>
+                                    <li><strong>Welded:</strong><br>ERW, SAW, CDW, MMAW</li>
+                                </ul>
+                            </div>
+                            <div class="bottom-accent"></div>
                         </div>
 
-                        <!-- Bottom Row Cards -->
-                        <div class="feature-card card-bottom-1">
-                            <div class="icon-badge">🏗️</div>
-                            <h3 class="feature-card__title">
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="icon">🏗️</i>
+                            </div>
+                            <h3 class="card-title">
                                 <a href="services-4.html">Key Applications</a>
                             </h3>
-                            <div class="feature-card__content">
-                                <div class="feature-card__text">
-                                    <ul>
-                                        <li>Steam and Line Piping</li>
-                                        <li>Boilers and Superheaters</li>
-                                        <li>Economizers and Water Walls</li>
-                                        <li>Headers and Air Pre-heaters</li>
-                                        <li>Heat Exchangers and Rifle Bore Tubes</li>
-                                    </ul>
-                                </div>
+                            <div class="card-content">
+                                <ul class="styled-list">
+                                    <li>Steam & Line Piping</li>
+                                    <li>Boilers & Superheaters</li>
+                                    <li>Economizers</li>
+                                    <li>Air Pre-heaters</li>
+                                    <li>Heat Exchangers</li>
+                                </ul>
                             </div>
-                            <div class="glow-line"></div>
+                            <div class="bottom-accent"></div>
                         </div>
 
-                        <div class="feature-card card-bottom-2">
-                            <div class="icon-badge">📜</div>
-                            <h3 class="feature-card__title">
-                                <a href="services-4.html">Global Standards Compliance</a>
-                            </h3>
-                            <div class="feature-card__content">
-                                <p>Our products comply with international specifications:</p>
-                                <div class="feature-card__text">
-                                    <ul>
-                                        <li><strong>ASME / ASTM:</strong> A178, A179, A192, A210, A213, A312, A335,
-                                            A106, A53, A333</li>
-                                        <li><strong>DIN & EN:</strong> DIN 17175, EN 10216-2, St35.8, 16Mo3, 13CrMo4-5,
-                                            X20CrMoV11-1</li>
-                                        <li><strong>BS & Others:</strong> BS 3059, BS 6323, GB 5310 (20G, 15CrMoG), GOST
-                                            Grades</li>
-                                    </ul>
-                                </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="icon">📜</i>
                             </div>
-                            <div class="glow-line"></div>
+                            <h3 class="card-title">
+                                <a href="services-4.html">Global Standards</a>
+                            </h3>
+                            <div class="card-content">
+                                <ul class="styled-list">
+                                    <li><strong>ASME/ASTM:</strong> A106, A335</li>
+                                    <li><strong>DIN/EN:</strong> 17175, 10216-2</li>
+                                    <li><strong>BS/GB:</strong> 3059, 20G</li>
+                                    <li><strong>GOST:</strong> Industrial Grades</li>
+                                </ul>
+                            </div>
+                            <div class="bottom-accent"></div>
                         </div>
                     </div>
                 </div>
