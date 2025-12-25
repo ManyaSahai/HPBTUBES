@@ -50,371 +50,371 @@
     <link rel="stylesheet" href="assets/css/austry.css" />
     <link rel="stylesheet" href="assets/css/austry-responsive.css" />
     <link rel="stylesheet" href="assets/css/color-4.css" />
+</head>
+<style>
+    /* --- Navigation Menu Styles --- */
+    .nav-wrapper-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
 
-    <style>
-        /* --- Navigation Menu Styles --- */
-        .nav-wrapper-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
+    .nav-right-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .nav-menu-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
+    .nav-brochure-btn {
+        background: #007bff;
+        color: white;
+        padding: 8px 12px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .nav-brochure-btn:hover {
+        background: #0056b3;
+        color: white;
+    }
+
+    /* --- General & Theme --- */
+    :root {
+        --bg-color-light: #f8faff;
+        --card-bg-color: #ffffff;
+        --primary-blue: #3a7bd5;
+        --primary-purple: #6a1b9a;
+        --text-dark: #2c3e50;
+        --text-light: #6c757d;
+        --border-color: #e0e7ff;
+        --shadow-color: rgba(99, 102, 241, 0.1);
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color-light);
+        color: var(--text-dark);
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        padding: 40px 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    h2,
+    h3 {
+        color: var(--primary-purple);
+    }
+
+    /* --- Main Layout --- */
+    .product-content {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .sidebar {
+        flex: 0 0 280px;
+        background-color: var(--card-bg-color);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px var(--shadow-color);
+    }
+
+    .product-listing {
+        flex-grow: 1;
+    }
+
+    /* --- Sidebar --- */
+    .sidebar h2 {
+        font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 10px;
+    }
+
+    .search-box {
+        display: flex;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    #searchInput {
+        border: none;
+        padding: 10px 15px;
+        flex-grow: 1;
+        font-size: 14px;
+        outline: none;
+    }
+
+    .search-box button {
+        background: var(--primary-blue);
+        border: none;
+        padding: 0 12px;
+        cursor: pointer;
+    }
+
+    .search-icon {
+        fill: white;
+        width: 20px;
+        height: 20px;
+    }
+
+    .category-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .category-list li a {
+        text-decoration: none;
+        color: var(--primary-blue);
+        font-weight: 500;
+        display: block;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .category-list li a:hover {
+        color: var(--primary-purple);
+        background-color: var(--bg-color-light);
+    }
+
+    .category-list li a.active {
+        color: var(--primary-purple);
+        background-color: var(--bg-color-light);
+        font-weight: 700;
+    }
+
+    /* --- Product Card --- */
+    .results-info {
+        margin-bottom: 20px;
+        font-weight: 500;
+        color: var(--text-light);
+    }
+
+    .product-card {
+        display: none;
+        background: var(--card-bg-color);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px var(--shadow-color);
+        animation: fadeIn 0.5s ease;
+        margin-bottom: 30px;
+        /* ADDED: Space between card and pagination */
+    }
+
+    .product-card.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
 
-        .nav-right-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex: 1;
-            justify-content: flex-end;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
+    }
 
-        .nav-menu-list {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 20px;
-        }
+    .product-image {
+        position: relative;
+        width: 100%;
+        padding-top: 60%;
+        background: #f0f4ff;
+    }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-shrink: 0;
-        }
+    .image-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .nav-brochure-btn {
-            background: #007bff;
-            color: white;
-            padding: 8px 12px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 13px;
-            white-space: nowrap;
-        }
+    .image-slide.active {
+        opacity: 1;
+    }
 
-        .nav-brochure-btn:hover {
-            background: #0056b3;
-            color: white;
-        }
+    .image-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
 
-        /* --- General & Theme --- */
-        :root {
-            --bg-color-light: #f8faff;
-            --card-bg-color: #ffffff;
-            --primary-blue: #3a7bd5;
-            --primary-purple: #6a1b9a;
-            --text-dark: #2c3e50;
-            --text-light: #6c757d;
-            --border-color: #e0e7ff;
-            --shadow-color: rgba(99, 102, 241, 0.1);
-        }
+    .slide-nav {
+        text-align: center;
+        padding: 15px 0;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color-light);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-        }
+    .slide-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        background: var(--border-color);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 0;
+    }
 
-        main {
-            padding: 40px 0;
-        }
+    .slide-dot.active {
+        background: var(--primary-blue);
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+    .product-info {
+        padding: 0 30px 30px 30px;
+    }
 
-        h2,
-        h3 {
-            color: var(--primary-purple);
-        }
+    .product-title {
+        font-size: 28px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
 
-        /* --- Main Layout --- */
+    .product-description {
+        color: var(--text-light);
+        line-height: 1.8;
+        font-size: 15px;
+    }
+
+    .product-description b {
+        color: var(--text-dark);
+    }
+
+    /* --- Pagination --- */
+    .pagination {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        /* ADDED: Allow wrapping on small screens */
+        gap: 15px;
+        /* ADDED: Space when items wrap */
+    }
+
+    .page-numbers {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 5px;
+    }
+
+    .page-numbers a {
+        display: block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--primary-blue);
+        background-color: var(--card-bg-color);
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .page-numbers a.active,
+    .page-numbers a:hover {
+        background-color: var(--primary-blue);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 991px) {
         .product-content {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
+            flex-direction: column;
         }
 
         .sidebar {
-            flex: 0 0 280px;
-            background-color: var(--card-bg-color);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px var(--shadow-color);
+            width: 100%;
+            flex-basis: auto;
         }
 
-        .product-listing {
-            flex-grow: 1;
-        }
-
-        /* --- Sidebar --- */
-        .sidebar h2 {
-            font-size: 20px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .search-box {
-            display: flex;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        #searchInput {
-            border: none;
-            padding: 10px 15px;
-            flex-grow: 1;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .search-box button {
-            background: var(--primary-blue);
-            border: none;
-            padding: 0 12px;
-            cursor: pointer;
-        }
-
-        .search-icon {
-            fill: white;
-            width: 20px;
-            height: 20px;
-        }
-
-        .category-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .category-list li a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 500;
-            display: block;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .category-list li a:hover {
-            color: var(--primary-purple);
-            background-color: var(--bg-color-light);
-        }
-
-        .category-list li a.active {
-            color: var(--primary-purple);
-            background-color: var(--bg-color-light);
-            font-weight: 700;
-        }
-
-        /* --- Product Card --- */
-        .results-info {
-            margin-bottom: 20px;
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        .product-card {
+        /* FIX: Hide desktop navigation on tablets and below */
+        .nav-menu-list {
             display: none;
-            background: var(--card-bg-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px var(--shadow-color);
-            animation: fadeIn 0.5s ease;
-            margin-bottom: 30px;
-            /* ADDED: Space between card and pagination */
         }
 
-        .product-card.active {
+        .main-menu-four__main-menu-box .mobile-nav__toggler {
             display: block;
+            /* Ensure hamburger is visible */
         }
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .product-image {
-            position: relative;
-            width: 100%;
-            padding-top: 60%;
-            background: #f0f4ff;
-        }
-
-        .image-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image-slide.active {
-            opacity: 1;
-        }
-
-        .image-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .slide-nav {
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        .slide-dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            margin: 0 5px;
-            background: var(--border-color);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 0;
-        }
-
-        .slide-dot.active {
-            background: var(--primary-blue);
+    @media (max-width: 767px) {
+        .product-title {
+            font-size: 22px;
+            /* Reduce title size on mobile */
         }
 
         .product-info {
-            padding: 0 30px 30px 30px;
+            padding: 0 20px 20px 20px;
+            /* Reduce padding on mobile */
         }
 
-        .product-title {
-            font-size: 28px;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .product-description {
-            color: var(--text-light);
-            line-height: 1.8;
-            font-size: 15px;
-        }
-
-        .product-description b {
-            color: var(--text-dark);
-        }
-
-        /* --- Pagination --- */
         .pagination {
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            /* ADDED: Allow wrapping on small screens */
-            gap: 15px;
-            /* ADDED: Space when items wrap */
+            justify-content: center;
+            /* Center pagination on mobile */
         }
 
-        .page-numbers {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 5px;
+        /* FIX: Hide brochure button text on small screens */
+        .nav-brochure-btn .btn-text {
+            display: none;
         }
 
-        .page-numbers a {
-            display: block;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--primary-blue);
-            background-color: var(--card-bg-color);
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .nav-brochure-btn {
+            padding: 8px 10px;
+            /* Adjust padding for icon-only button */
         }
-
-        .page-numbers a.active,
-        .page-numbers a:hover {
-            background-color: var(--primary-blue);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* --- Responsive --- */
-        @media (max-width: 991px) {
-            .product-content {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                flex-basis: auto;
-            }
-
-            /* FIX: Hide desktop navigation on tablets and below */
-            .nav-menu-list {
-                display: none;
-            }
-
-            .main-menu-four__main-menu-box .mobile-nav__toggler {
-                display: block;
-                /* Ensure hamburger is visible */
-            }
-        }
-
-        @media (max-width: 767px) {
-            .product-title {
-                font-size: 22px;
-                /* Reduce title size on mobile */
-            }
-
-            .product-info {
-                padding: 0 20px 20px 20px;
-                /* Reduce padding on mobile */
-            }
-
-            .pagination {
-                justify-content: center;
-                /* Center pagination on mobile */
-            }
-
-            /* FIX: Hide brochure button text on small screens */
-            .nav-brochure-btn .btn-text {
-                display: none;
-            }
-
-            .nav-brochure-btn {
-                padding: 8px 10px;
-                /* Adjust padding for icon-only button */
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
@@ -857,14 +857,14 @@
                         <p class="product-description"><b>These are Boiler feed-water heaters in which the heat
                                 from waste flue gases is recovered to raise the temperature of feed water
                                 supplied to the boiler, thereby increasing the Fuel economy, Steaming capacity,
-                                Life of the boiler and reducing Pollution.
-                                We have fabricated various types Economizer Coils (Plain Tubular Economizers,
-                                Finned Economizers, Cast Iron Gilled Economizers), Feed Water Heaters,
-                                Evaporator Coils etc.
-                                The main problem faced by Boiler engineers is the Erosion of the Eco-coil tubes
-                                and mainly at bends. We offer innovative solutions to extend the life of coils
-                                by providing Cassette baffles for Bends, Half Tube Sleeves for upper tubes, SS
-                                full sleeved Tubes etc.
+                                Life of the boiler and reducing Pollution. </b>
+                            We have fabricated various types Economizer Coils (Plain Tubular Economizers,
+                            Finned Economizers, Cast Iron Gilled Economizers), Feed Water Heaters,
+                            Evaporator Coils etc.
+                            The main problem faced by Boiler engineers is the Erosion of the Eco-coil tubes
+                            and mainly at bends. We offer innovative solutions to extend the life of coils
+                            by providing Cassette baffles for Bends, Half Tube Sleeves for upper tubes, SS
+                            full sleeved Tubes etc.
 
                         </p>
                     </div>
@@ -1222,7 +1222,7 @@
                             <li><a href="about.html">About</a></li>
                             <li><a href="product.html">Products</a></li>
                             <li><a href="">Certifications</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
