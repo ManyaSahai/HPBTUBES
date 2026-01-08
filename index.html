@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="assets/css/austry.css" />
     <link rel="stylesheet" href="assets/css/austry-responsive.css" />
     <link rel="stylesheet" href="assets/css/color-4.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
 </head>
 
 <body>
@@ -58,365 +59,108 @@
 
 
     <div class="page-wrapper">
-        <header class="main-header-four">
-            <div class="main-header-four__top">
-                <div class="container">
-                    <div class="main-header-four__top-inner">
+        <!-- ====================== HPB TUBES NAVBAR START ====================== -->
+        <header class="th-header header-layout4 header-absolute">
+            <div class="sticky-wrapper">
+                <div class="menu-area">
+                    <div class="container th-container5">
+                        <div style="display: flex; align-items: center; gap: 20px;">
 
-                    </div>
-                </div>
-            </div>
+                            <!-- Logo -->
+                            <div class="header-logo">
+                                <a class="icon-masking" href="index.html">
+                                    <img src="assets/images/HPB TUBES LLP logo final.png" alt="HPB Tubes">
+                                </a>
+                            </div>
 
-            <!DOCTYPE html>
-            <html lang="en">
+                            <!-- Main Navigation Menu -->
+                            <nav class="main-menu style2 d-none d-lg-inline-block tpp-main-nav-container">
+                                <ul class="tpp-main-nav-list">
+                                    <li class="tpp-main-nav-item"><a href="index.html" class="tpp-main-nav-link"
+                                            data-i18n="nav.home">Home</a></li>
+                                    <li class="tpp-main-nav-item"><a href="about.html" class="tpp-main-nav-link"
+                                            data-i18n="nav.about">About Us</a></li>
 
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Navigation Menu</title>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-                <style>
-                    .nav-wrapper-inner {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        width: 100%;
-                    }
-
-                    .nav-right-section {
-                        display: flex;
-                        align-items: center;
-                        gap: 15px;
-                        flex: 1;
-                        justify-content: flex-end;
-                    }
-
-                    .nav-menu-list {
-                        display: flex;
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-                        gap: 20px;
-                    }
-
-                    .nav-dropdown {
-                        position: relative;
-                    }
-
-                    .nav-dropdown ul {
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        background: white;
-                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                        min-width: 150px;
-                        display: none;
-                        z-index: 1000;
-                    }
-
-                    .nav-dropdown:hover ul {
-                        display: block;
-                    }
-
-                    .nav-actions {
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                        flex-shrink: 0;
-                    }
-
-                    .nav-brochure-btn {
-                        background: #007bff;
-                        color: white;
-                        padding: 8px 12px;
-                        text-decoration: none;
-                        border-radius: 5px;
-                        transition: background 0.3s;
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-                        font-size: 13px;
-                        white-space: nowrap;
-                    }
-
-                    .nav-brochure-btn:hover {
-                        background: #0056b3;
-                        color: white;
-                        text-decoration: none;
-                    }
-
-                    .nav-language-selector {
-                        position: relative;
-                    }
-
-                    .nav-language-toggle {
-                        display: flex;
-                        align-items: center;
-                        gap: 3px;
-                        padding: 6px 8px;
-                        background: #f8f9fa;
-                        border: 1px solid #dee2e6;
-                        border-radius: 5px;
-                        text-decoration: none;
-                        color: #333;
-                        transition: background 0.3s;
-                        font-size: 12px;
-                        white-space: nowrap;
-                    }
-
-                    .nav-language-toggle:hover {
-                        background: #e9ecef;
-                        text-decoration: none;
-                        color: #333;
-                    }
-
-                    .nav-language-dropdown {
-                        position: absolute;
-                        top: 100%;
-                        right: 0;
-                        background: white;
-                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                        min-width: 150px;
-                        display: none;
-                        z-index: 1000;
-                        border-radius: 5px;
-                        overflow: hidden;
-                    }
-
-                    .nav-language-selector:hover .nav-language-dropdown {
-                        display: block;
-                    }
-
-                    .nav-language-dropdown a {
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                        padding: 10px 15px;
-                        text-decoration: none;
-                        color: #333;
-                        transition: background 0.3s;
-                    }
-
-                    .nav-language-dropdown a:hover {
-                        background: #f8f9fa;
-                        text-decoration: none;
-                    }
-
-                    .flag-icon {
-                        width: 20px;
-                        height: 15px;
-                        border-radius: 2px;
-                    }
-
-                    /* Mobile menu styles */
-                    .mobile-nav__toggler {
-                        display: none;
-                    }
-
-                    @media (max-width: 1024px) {
-                        .nav-menu-list {
-                            gap: 15px;
-                        }
-
-                        .nav-brochure-btn {
-                            padding: 6px 10px;
-                            font-size: 12px;
-                        }
-
-                        .nav-language-toggle {
-                            padding: 5px 6px;
-                            font-size: 11px;
-                        }
-                    }
-
-                    @media (max-width: 768px) {
-                        .mobile-nav__toggler {
-                            display: block;
-                        }
-
-                        .nav-menu-list {
-                            display: none;
-                        }
-
-                        .nav-actions {
-                            flex-direction: row;
-                            gap: 8px;
-                        }
-
-                        .nav-brochure-btn {
-                            padding: 8px 12px;
-                            font-size: 12px;
-                        }
-
-                        .nav-language-toggle {
-                            padding: 8px 10px;
-                            font-size: 12px;
-                        }
-                    }
-
-                    @media (max-width: 480px) {
-                        .nav-wrapper-inner {
-                            flex-wrap: nowrap;
-                        }
-
-                        .nav-actions {
-                            gap: 5px;
-                        }
-
-                        .nav-brochure-btn .btn-text {
-                            display: none;
-                        }
-
-                        .nav-brochure-btn::after {
-                            content: "PDF";
-                        }
-                    }
-                </style>
-            </head>
-
-            <body>
-                <nav class="main-menu main-menu-four">
-                    <div class="main-menu-four__wrapper">
-                        <div class="container">
-                            <div class="nav-wrapper-inner">
-                                <div class="main-menu-four__left">
-                                    <div class="main-menu-four__logo">
-                                        <a href="index.html">
-                                            <img src="assets/images/HPB TUBES LLP logo final.png" alt="Logo"
-                                                style="width:150px; height:auto;">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="nav-right-section">
-                                    <div class="main-menu-four__main-menu-box">
-                                        <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                        <ul class="nav-menu-list">
-                                            <li class="nav-dropdown">
-                                                <a href="index.html">Home</a>
-                                                <ul>
-                                                    <!-- Home dropdown items if needed -->
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="about.html">About Us</a>
-                                            </li>
-                                            <li class="nav-dropdown">
-                                                <a href="product.html">Products</a>
-                                                <ul>
-                                                    <!-- Products dropdown items -->
-                                                </ul>
-                                            </li>
-                                            <li class="nav-dropdown">
-                                                <a href="#">Certifications</a>
-                                                <ul>
-                                                    <!-- Certifications dropdown items -->
-                                                </ul>
-                                            </li>
-
-                                            <li class="nav-dropdown">
-                                                <a href="contact.html">Contact</a>
-                                                <ul>
-                                                    <!-- Contact dropdown items -->
-                                                </ul>
+                                    <!-- Products Dropdown -->
+                                    <li class="tpp-main-nav-item dropdown">
+                                        <a href="product.html" class="tpp-main-nav-link"
+                                            data-i18n="nav.products">Products</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="product.html#water-wall" data-i18n="products.waterwall">Water
+                                                    Wall Panels</a></li>
+                                            <li><a href="product.html#economiser"
+                                                    data-i18n="products.economizer">Economisers Coils</a></li>
+                                            <li><a href="product.html#superheater"
+                                                    data-i18n="products.superheater">Superheater Coils</a></li>
+                                            <li><a href="product.html#studded" data-i18n="products.studdedtube">Studded
+                                                    Bed Coils & Tubes</a></li>
+                                            <li><a href="product.html#boiler-bank"
+                                                    data-i18n="products.boilerbank">Boiler Bank Tubes</a></li>
+                                            <li><a href="product.html#pipes" data-i18n="products.pipes">Pipes &
+                                                    Tubes</a></li>
+                                            <li><a href="product.html#finned" data-i18n="products.finnedtube">Finned
+                                                    Tubes</a></li>
+                                            <li><a href="product.html#headers" data-i18n="products.header">Headers</a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </li>
 
-                                    <!-- New Actions Section -->
-                                    <div class="nav-actions">
-                                        <!-- Download Brochure Button -->
-                                        <a href="#" class="nav-brochure-btn" onclick="downloadBrochure()">
-                                            <i class="fas fa-download"></i>
-                                            <a href="assets/images/HPB%20Tubes.pdf" target="_blank">
-                                                <span class="btn-text">Download Brochure</span>
-                                            </a>
+                                    <li class="tpp-main-nav-item"><a href="faq.html" class="tpp-main-nav-link"
+                                            data-i18n="nav.certifications">Certifications</a></li>
+                                    <li class="tpp-main-nav-item"><a href="our-clients.html" class="tpp-main-nav-link"
+                                            data-i18n="nav.quality">Quality</a></li>
+                                    <li class="tpp-main-nav-item"><a href="contact.html" class="tpp-main-nav-link"
+                                            data-i18n="nav.contact">Contact</a></li>
+                                </ul>
+                            </nav>
 
+                            <!-- Download Brochure & Global Language Selector -->
+                            <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                                <div class="header-button">
+                                    <a href="assets/images/HPB Tubes.pdf" class="th-btn style6 style-radius tpp-no-wrap"
+                                        target="_blank" rel="noopener noreferrer"
+                                        data-i18n="common.downloadbrochure">Download Brochure</a>
+                                </div>
+
+                                <!-- 🌐 Global Language Dropdown -->
+                                <div class="language-selector-wrapper">
+                                    <button class="language-globe-btn" aria-label="Select Language"
+                                        onclick="toggleLanguageDropdown()">
+                                        🌐 <span style="margin-left: 6px; font-weight: 600;">Global</span>
+                                    </button>
+                                    <div class="language-dropdown" id="languageDropdown">
+                                        <a href="#" data-lang="global" onclick="changeLanguage('en'); return false;">
+                                            <span class="flag">🌍</span> Global English
                                         </a>
-
-                                        <!-- Language Selector -->
-                                        <div class="nav-language-selector">
-                                            <a href="#" class="nav-language-toggle">
-                                                <i class="fas fa-globe"></i>
-                                                EN
-                                                <i class="fas fa-chevron-down"></i>
-                                            </a>
-                                            <div class="nav-language-dropdown">
-                                                <a href="#" onclick="changeLanguage('en')">
-                                                    <span class="flag-icon"
-                                                        style="background: linear-gradient(to bottom, #012169 33%, #FFFFFF 33%, #FFFFFF 66%, #C8102E 66%);"></span>
-                                                    English
-                                                </a>
-                                                <a href="#" onclick="changeLanguage('fr')">
-                                                    <span class="flag-icon"
-                                                        style="background: linear-gradient(to right, #002654 33%, #FFFFFF 33%, #FFFFFF 66%, #CE1126 66%);"></span>
-                                                    Français
-                                                </a>
-                                                <a href="#" onclick="changeLanguage('ca')">
-                                                    <span class="flag-icon"
-                                                        style="background: linear-gradient(to bottom, #FF0000 50%, #FFFFFF 50%);"></span>
-                                                    Canada
-                                                </a>
-                                                <a href="#" onclick="changeLanguage('pt')">
-                                                    <span class="flag-icon"
-                                                        style="background: linear-gradient(to right, #009639 50%, #FFDF00 50%);"></span>
-                                                    Português
-                                                </a>
-                                                <a href="#" onclick="changeLanguage('es')">
-                                                    <span class="flag-icon"
-                                                        style="background: linear-gradient(to bottom, #AA151B 33%, #F1BF00 33%, #F1BF00 66%, #AA151B 66%);"></span>
-                                                    Español
-                                                </a>
-                                            </div>
-                                        </div>
+                                        <a href="#" data-lang="pt" onclick="changeLanguage('pt'); return false;">
+                                            <span class="flag">🇧🇷</span> Brazil - Português
+                                        </a>
+                                        <a href="#" data-lang="fr-ca" onclick="changeLanguage('fr'); return false;">
+                                            <span class="flag">🇨🇦</span> Canada - Français
+                                        </a>
+                                        <a href="#" data-lang="es-mx" onclick="changeLanguage('es'); return false;">
+                                            <span class="flag">🇲🇽</span> Mexico - Español
+                                        </a>
+                                        <a href="#" data-lang="es-pe" onclick="changeLanguage('es'); return false;">
+                                            <span class="flag">🇵🇪</span> Peru - Español
+                                        </a>
+                                        <a href="#" data-lang="en-us" onclick="changeLanguage('en'); return false;">
+                                            <span class="flag">🇺🇸</span> United States - English
+                                        </a>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Mobile Menu Button -->
+                            <button type="button" class="th-menu-toggle d-block d-lg-none tpp-mobile-menu-btn">
+                                <i class="far fa-bars"></i>
+                            </button>
                         </div>
                     </div>
-                </nav>
-
-                <script>
-                    function downloadBrochure() {
-                        // Replace with your actual brochure download logic
-                        console.log('Downloading brochure...');
-                        alert('Brochure download started!');
-                        // Example: window.open('path/to/your/brochure.pdf', '_blank');
-                    }
-
-                    function changeLanguage(lang) {
-                        // Replace with your actual language change logic
-                        console.log('Changing language to:', lang);
-
-                        // Update the display text
-                        const langToggle = document.querySelector('.nav-language-toggle');
-                        const langCodes = {
-                            'en': 'EN',
-                            'fr': 'FR',
-                            'ca': 'CA',
-                            'pt': 'PT',
-                            'es': 'ES'
-                        };
-
-                        // Update the displayed language code
-                        const langText = langToggle.childNodes[2]; // The text node between icons
-                        langText.textContent = ' ' + langCodes[lang] + ' ';
-
-                        // Here you would typically:
-                        // 1. Store the language preference
-                        // 2. Redirect to the appropriate language version
-                        // 3. Or dynamically change the page content
-
-                        alert(`Language changed to: ${lang}`);
-                    }
-                </script>
-            </body>
-
-            </html>
+                </div>
+            </div>
         </header>
-
-        <div class="stricky-header stricked-menu main-menu main-menu-four">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+        <!-- ====================== HPB TUBES NAVBAR END ====================== -->
 
         <!--Main Slider Start-->
         <section class="main-slider-four">
@@ -491,9 +235,12 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="main-slider-four__content">
-                                        <h2 class="main-slider-four__title">Boiler <span>Tube</span> Experts</h2>
-                                        <p class="main-slider-four__text">High Pressure Boiler Tubes with IBR Approved
-                                            MTC.</p>
+                                        <h2 class="main-slider-four__title">Tube, Pipes, Boiler for thermal power plant.
+                                        </h2>
+                                        <p class="main-slider-four__text">Looking for a reliable steel tube and pipe
+                                            manufacturer for your next project?
+                                            Partner with HPB Tubes – where precision meets performance.
+                                        </p>
                                         <div class="main-slider-four__btn-box">
                                             <a href="about.html" class="thm-btn main-slider-four__btn">Discover
                                                 more</a>
@@ -2010,6 +1757,7 @@
 
     <!-- template js -->
     <script src="assets/js/austry.js"></script>
+    <script src="assets/js/navbar.js"></script>
 </body>
 
 
